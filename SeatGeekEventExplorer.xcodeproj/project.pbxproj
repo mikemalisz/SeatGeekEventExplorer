@@ -13,6 +13,7 @@
 		8C71B19D25CCE334006B1340 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C71B19C25CCE334006B1340 /* Assets.xcassets */; };
 		8C71B1A025CCE334006B1340 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C71B19E25CCE334006B1340 /* LaunchScreen.storyboard */; };
 		8C71B1AB25CCE334006B1340 /* SeatGeekEventExplorerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C71B1AA25CCE334006B1340 /* SeatGeekEventExplorerTests.swift */; };
+		8C71B1DF25CCE569006B1340 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C71B1DE25CCE569006B1340 /* Environment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		8C71B1A625CCE334006B1340 /* SeatGeekEventExplorerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SeatGeekEventExplorerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C71B1AA25CCE334006B1340 /* SeatGeekEventExplorerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatGeekEventExplorerTests.swift; sourceTree = "<group>"; };
 		8C71B1AC25CCE334006B1340 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C71B1DE25CCE569006B1340 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				8C71B19E25CCE334006B1340 /* LaunchScreen.storyboard */,
 				8C71B19C25CCE334006B1340 /* Assets.xcassets */,
 				8C71B1A125CCE334006B1340 /* Info.plist */,
+				8C71B1DE25CCE569006B1340 /* Environment.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C71B19825CCE333006B1340 /* ViewController.swift in Sources */,
+				8C71B1DF25CCE569006B1340 /* Environment.swift in Sources */,
 				8C71B19425CCE333006B1340 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

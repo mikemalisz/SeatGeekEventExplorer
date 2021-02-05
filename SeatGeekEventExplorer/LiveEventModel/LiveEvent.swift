@@ -19,7 +19,7 @@ struct LiveEvent: Decodable {
     
     let title: String
     
-    let dateTimeUTC: Date
+    let dateScheduled: Date
     
     let venue: LiveEventVenue
     
@@ -33,7 +33,9 @@ extension LiveEvent {
     /// Helps create a Date object from date time from the JSON server response
     private static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
+        // date time format supplied from API
         formatter.dateFormat = "yyyy-MM-DD'T'HH:mm:ss"
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
         return formatter
     }()
     
@@ -56,6 +58,6 @@ extension LiveEvent {
         guard let date = LiveEvent.dateFormatter.date(from: rawDateTime) else {
             throw DecodingError.dataCorruptedError(forKey: CodingKeys.dateTimeUTC, in: values, debugDescription: "Failed to create date object")
         }
-        dateTimeUTC = date
+        dateScheduled = date
     }
 }

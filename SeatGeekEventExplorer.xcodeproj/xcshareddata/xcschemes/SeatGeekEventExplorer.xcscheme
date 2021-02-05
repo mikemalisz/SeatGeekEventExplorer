@@ -38,16 +38,6 @@
                ReferencedContainer = "container:SeatGeekEventExplorer.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8C71B1B025CCE334006B1340"
-               BuildableName = "SeatGeekEventExplorerUITests.xctest"
-               BlueprintName = "SeatGeekEventExplorerUITests"
-               ReferencedContainer = "container:SeatGeekEventExplorer.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

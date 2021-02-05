@@ -14,6 +14,9 @@
 		8C71B1A025CCE334006B1340 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C71B19E25CCE334006B1340 /* LaunchScreen.storyboard */; };
 		8C71B1AB25CCE334006B1340 /* SeatGeekEventExplorerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C71B1AA25CCE334006B1340 /* SeatGeekEventExplorerTests.swift */; };
 		8C71B1DF25CCE569006B1340 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C71B1DE25CCE569006B1340 /* Environment.swift */; };
+		8C71B1E425CCE746006B1340 /* LiveEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C71B1E325CCE746006B1340 /* LiveEvent.swift */; };
+		8C71B1E825CCE789006B1340 /* LiveEventPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C71B1E725CCE789006B1340 /* LiveEventPerformer.swift */; };
+		8C71B1EC25CCED73006B1340 /* LiveEventVenue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C71B1EB25CCED73006B1340 /* LiveEventVenue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,9 @@
 		8C71B1AA25CCE334006B1340 /* SeatGeekEventExplorerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatGeekEventExplorerTests.swift; sourceTree = "<group>"; };
 		8C71B1AC25CCE334006B1340 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C71B1DE25CCE569006B1340 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		8C71B1E325CCE746006B1340 /* LiveEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEvent.swift; sourceTree = "<group>"; };
+		8C71B1E725CCE789006B1340 /* LiveEventPerformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventPerformer.swift; sourceTree = "<group>"; };
+		8C71B1EB25CCED73006B1340 /* LiveEventVenue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventVenue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,7 @@
 		8C71B19225CCE333006B1340 /* SeatGeekEventExplorer */ = {
 			isa = PBXGroup;
 			children = (
+				8C71B1E225CCE71D006B1340 /* LiveEventModel */,
 				8C71B19725CCE333006B1340 /* ViewController.swift */,
 				8C71B19925CCE333006B1340 /* Main.storyboard */,
 				8C71B1CF25CCE416006B1340 /* SupportingFiles */,
@@ -105,6 +112,16 @@
 				8C71B1DE25CCE569006B1340 /* Environment.swift */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		8C71B1E225CCE71D006B1340 /* LiveEventModel */ = {
+			isa = PBXGroup;
+			children = (
+				8C71B1E325CCE746006B1340 /* LiveEvent.swift */,
+				8C71B1E725CCE789006B1340 /* LiveEventPerformer.swift */,
+				8C71B1EB25CCED73006B1340 /* LiveEventVenue.swift */,
+			);
+			path = LiveEventModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,8 +224,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C71B1E425CCE746006B1340 /* LiveEvent.swift in Sources */,
+				8C71B1E825CCE789006B1340 /* LiveEventPerformer.swift in Sources */,
 				8C71B19825CCE333006B1340 /* ViewController.swift in Sources */,
 				8C71B1DF25CCE569006B1340 /* Environment.swift in Sources */,
+				8C71B1EC25CCED73006B1340 /* LiveEventVenue.swift in Sources */,
 				8C71B19425CCE333006B1340 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

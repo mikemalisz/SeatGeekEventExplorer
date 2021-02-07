@@ -20,6 +20,7 @@
 		8C8433F925CF80A2000BF116 /* DiskStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8433F825CF80A2000BF116 /* DiskStorageService.swift */; };
 		8C8433FE25CF82DB000BF116 /* FileManager+getDocumentsDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8433FD25CF82DB000BF116 /* FileManager+getDocumentsDirectory.swift */; };
 		8C84340525CF8D70000BF116 /* DiskStorageServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C84340425CF8D70000BF116 /* DiskStorageServiceTests.swift */; };
+		8C84340C25CF96A0000BF116 /* LiveEventRetrieving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C84340B25CF96A0000BF116 /* LiveEventRetrieving.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		8C8433F825CF80A2000BF116 /* DiskStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskStorageService.swift; sourceTree = "<group>"; };
 		8C8433FD25CF82DB000BF116 /* FileManager+getDocumentsDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+getDocumentsDirectory.swift"; sourceTree = "<group>"; };
 		8C84340425CF8D70000BF116 /* DiskStorageServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskStorageServiceTests.swift; sourceTree = "<group>"; };
+		8C84340B25CF96A0000BF116 /* LiveEventRetrieving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventRetrieving.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 		8C71B19225CCE333006B1340 /* SeatGeekEventExplorer */ = {
 			isa = PBXGroup;
 			children = (
+				8C84340A25CF966C000BF116 /* NetworkService */,
 				8C71B1E225CCE71D006B1340 /* LiveEventModel */,
 				8C71B19725CCE333006B1340 /* ViewController.swift */,
 				8C71B19925CCE333006B1340 /* Main.storyboard */,
@@ -155,6 +158,14 @@
 				8C84340425CF8D70000BF116 /* DiskStorageServiceTests.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		8C84340A25CF966C000BF116 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				8C84340B25CF96A0000BF116 /* LiveEventRetrieving.swift */,
+			);
+			path = NetworkService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +273,7 @@
 				8C71B19825CCE333006B1340 /* ViewController.swift in Sources */,
 				8C71B1DF25CCE569006B1340 /* Environment.swift in Sources */,
 				8C71B1EC25CCED73006B1340 /* LiveEventVenue.swift in Sources */,
+				8C84340C25CF96A0000BF116 /* LiveEventRetrieving.swift in Sources */,
 				8C71B19425CCE333006B1340 /* AppDelegate.swift in Sources */,
 				8C8433F925CF80A2000BF116 /* DiskStorageService.swift in Sources */,
 				8C8433FE25CF82DB000BF116 /* FileManager+getDocumentsDirectory.swift in Sources */,

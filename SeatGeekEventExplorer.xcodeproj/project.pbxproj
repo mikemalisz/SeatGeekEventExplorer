@@ -24,6 +24,8 @@
 		8C84341225CF982F000BF116 /* SeatGeekNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C84341125CF982F000BF116 /* SeatGeekNetworkService.swift */; };
 		8C84341625CF9D63000BF116 /* NetworkServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C84341525CF9D63000BF116 /* NetworkServiceError.swift */; };
 		8CD49C2725D06785003D1EA2 /* LiveEventListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD49C2625D06785003D1EA2 /* LiveEventListManager.swift */; };
+		8CD49C2E25D07B2E003D1EA2 /* LiveEventListManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD49C2D25D07B2E003D1EA2 /* LiveEventListManagerTests.swift */; };
+		8CD49C3625D07BAA003D1EA2 /* LiveEventRetrievingMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD49C3525D07BAA003D1EA2 /* LiveEventRetrievingMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		8C84341125CF982F000BF116 /* SeatGeekNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatGeekNetworkService.swift; sourceTree = "<group>"; };
 		8C84341525CF9D63000BF116 /* NetworkServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceError.swift; sourceTree = "<group>"; };
 		8CD49C2625D06785003D1EA2 /* LiveEventListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventListManager.swift; sourceTree = "<group>"; };
+		8CD49C2D25D07B2E003D1EA2 /* LiveEventListManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventListManagerTests.swift; sourceTree = "<group>"; };
+		8CD49C3525D07BAA003D1EA2 /* LiveEventRetrievingMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventRetrievingMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,8 @@
 		8C71B1A925CCE334006B1340 /* SeatGeekEventExplorerTests */ = {
 			isa = PBXGroup;
 			children = (
+				8CD49C3425D07B91003D1EA2 /* Mocks */,
+				8CD49C2C25D07B1C003D1EA2 /* LiveEventList */,
 				8C84340325CF8D55000BF116 /* Utility */,
 				8C71B1AA25CCE334006B1340 /* SeatGeekEventExplorerTests.swift */,
 				8C71B1AC25CCE334006B1340 /* Info.plist */,
@@ -183,6 +189,22 @@
 				8CD49C2625D06785003D1EA2 /* LiveEventListManager.swift */,
 			);
 			path = LiveEventList;
+			sourceTree = "<group>";
+		};
+		8CD49C2C25D07B1C003D1EA2 /* LiveEventList */ = {
+			isa = PBXGroup;
+			children = (
+				8CD49C2D25D07B2E003D1EA2 /* LiveEventListManagerTests.swift */,
+			);
+			path = LiveEventList;
+			sourceTree = "<group>";
+		};
+		8CD49C3425D07B91003D1EA2 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				8CD49C3525D07BAA003D1EA2 /* LiveEventRetrievingMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,6 +328,8 @@
 			files = (
 				8C84340525CF8D70000BF116 /* DiskStorageServiceTests.swift in Sources */,
 				8C71B1AB25CCE334006B1340 /* SeatGeekEventExplorerTests.swift in Sources */,
+				8CD49C2E25D07B2E003D1EA2 /* LiveEventListManagerTests.swift in Sources */,
+				8CD49C3625D07BAA003D1EA2 /* LiveEventRetrievingMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

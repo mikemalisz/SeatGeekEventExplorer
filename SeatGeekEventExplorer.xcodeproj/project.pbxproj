@@ -26,6 +26,7 @@
 		8CD49C2725D06785003D1EA2 /* LiveEventListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD49C2625D06785003D1EA2 /* LiveEventListManager.swift */; };
 		8CD49C2E25D07B2E003D1EA2 /* LiveEventListManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD49C2D25D07B2E003D1EA2 /* LiveEventListManagerTests.swift */; };
 		8CD49C3625D07BAA003D1EA2 /* LiveEventRetrievingMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD49C3525D07BAA003D1EA2 /* LiveEventRetrievingMock.swift */; };
+		8CD49C3C25D0827B003D1EA2 /* LiveEventListManagerDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD49C3B25D0827B003D1EA2 /* LiveEventListManagerDelegateMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		8CD49C2625D06785003D1EA2 /* LiveEventListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventListManager.swift; sourceTree = "<group>"; };
 		8CD49C2D25D07B2E003D1EA2 /* LiveEventListManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventListManagerTests.swift; sourceTree = "<group>"; };
 		8CD49C3525D07BAA003D1EA2 /* LiveEventRetrievingMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventRetrievingMock.swift; sourceTree = "<group>"; };
+		8CD49C3B25D0827B003D1EA2 /* LiveEventListManagerDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventListManagerDelegateMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				8CD49C3525D07BAA003D1EA2 /* LiveEventRetrievingMock.swift */,
+				8CD49C3B25D0827B003D1EA2 /* LiveEventListManagerDelegateMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C84340525CF8D70000BF116 /* DiskStorageServiceTests.swift in Sources */,
+				8CD49C3C25D0827B003D1EA2 /* LiveEventListManagerDelegateMock.swift in Sources */,
 				8C71B1AB25CCE334006B1340 /* SeatGeekEventExplorerTests.swift in Sources */,
 				8CD49C2E25D07B2E003D1EA2 /* LiveEventListManagerTests.swift in Sources */,
 				8CD49C3625D07BAA003D1EA2 /* LiveEventRetrievingMock.swift in Sources */,

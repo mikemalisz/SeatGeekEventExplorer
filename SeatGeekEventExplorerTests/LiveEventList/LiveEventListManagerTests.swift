@@ -14,7 +14,7 @@ class LiveEventListManagerTests: XCTestCase {
         DiskStorageService.shared.clearStorage()
     }
 
-    func testLiveEventsUpdatesCorrectly() throws {
+    func testLiveEventsUpdatesCorrectly() {
         // create 3 (arbitrary) live events for testing
         var liveEventReference = [LiveEvent]()
         for _ in 0...2 {
@@ -24,18 +24,55 @@ class LiveEventListManagerTests: XCTestCase {
         // initialize mock server with the live events to return to the sut
         let mockServer = LiveEventRetrievingMock(completionHandlerData: .success(liveEventReference))
         
+        // system under test
         let sut = LiveEventListManager(eventProvider: mockServer,
                                        storageProvider: DiskStorageService.shared)
         
         sut.refreshLiveEvents(with: nil)
         
-        // make sure events in sut match live event reference
+        // make sure same number of events between sut and reference
         XCTAssert(sut.events.count == liveEventReference.count)
         
         // make sure events in sut are in same order as reference
         for i in 0..<sut.events.count {
             XCTAssertTrue(sut.events[i].id == liveEventReference[i].id)
         }
+    }
+    
+    func testLiveEventDelegateCalledOnEventsUpdate() {
+        // create 3 (arbitrary) live events for testing
+        var liveEventReference = [LiveEvent]()
+        for _ in 0...2 {
+            liveEventReference.append(randomLiveEventFactory())
+        }
+        
+        // initialize mock server with the live events to return to the sut
+        let mockServer = LiveEventRetrievingMock(completionHandlerData: .success(liveEventReference))
+        let mockDelegate = LiveEventListManagerDelegateMock()
+        
+        // system under test
+        let sut = LiveEventListManager(eventProvider: mockServer,
+                                       storageProvider: DiskStorageService.shared)
+        sut.delegate = mockDelegate
+        
+        // implement hooks to test if delegate is called on mock delegate
+        var didCallLiveEventsActions = false
+        mockDelegate.liveEventsDidUpdateAction = { events in
+            didCallLiveEventsActions = true
+            XCTAssert(sut.events.count == liveEventReference.count)
+            for i in 0..<sut.events.count {
+                XCTAssertTrue(sut.events[i].id == liveEventReference[i].id)
+            }
+        }
+        
+        mockDelegate.errorDidOccurAction = { _ in
+            XCTFail("Error action shouldn't be called")
+        }
+        
+        // perform test
+        sut.refreshLiveEvents(with: nil)
+        
+        XCTAssert(didCallLiveEventsActions)
     }
     
     // MARK: - Helper methods

@@ -22,6 +22,7 @@
 		8C84340525CF8D70000BF116 /* DiskStorageServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C84340425CF8D70000BF116 /* DiskStorageServiceTests.swift */; };
 		8C84340C25CF96A0000BF116 /* LiveEventRetrieving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C84340B25CF96A0000BF116 /* LiveEventRetrieving.swift */; };
 		8C84341225CF982F000BF116 /* SeatGeekNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C84341125CF982F000BF116 /* SeatGeekNetworkService.swift */; };
+		8C84341625CF9D63000BF116 /* NetworkServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C84341525CF9D63000BF116 /* NetworkServiceError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		8C84340425CF8D70000BF116 /* DiskStorageServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskStorageServiceTests.swift; sourceTree = "<group>"; };
 		8C84340B25CF96A0000BF116 /* LiveEventRetrieving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventRetrieving.swift; sourceTree = "<group>"; };
 		8C84341125CF982F000BF116 /* SeatGeekNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatGeekNetworkService.swift; sourceTree = "<group>"; };
+		8C84341525CF9D63000BF116 /* NetworkServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 			children = (
 				8C84340B25CF96A0000BF116 /* LiveEventRetrieving.swift */,
 				8C84341125CF982F000BF116 /* SeatGeekNetworkService.swift */,
+				8C84341525CF9D63000BF116 /* NetworkServiceError.swift */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				8C71B1DF25CCE569006B1340 /* Environment.swift in Sources */,
 				8C71B1EC25CCED73006B1340 /* LiveEventVenue.swift in Sources */,
 				8C84340C25CF96A0000BF116 /* LiveEventRetrieving.swift in Sources */,
+				8C84341625CF9D63000BF116 /* NetworkServiceError.swift in Sources */,
 				8C71B19425CCE333006B1340 /* AppDelegate.swift in Sources */,
 				8C8433F925CF80A2000BF116 /* DiskStorageService.swift in Sources */,
 				8C8433FE25CF82DB000BF116 /* FileManager+getDocumentsDirectory.swift in Sources */,

@@ -28,10 +28,36 @@ class SeatGeekNetworkService: LiveEventRetrieving {
         
         guard let url = urlComponents.url else {
             assertionFailure("Expecting valid URL")
-            completionHandler(.failure())
+            completionHandler(.failure(NetworkServiceError.unknownError))
             return
         }
         
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                completionHandler(.failure(error))
+            } else if let data = data,
+                      let response = response as? HTTPURLResponse {
+                guard response.statusCode == Constants.OKStatusCode else {
+                    completionHandler(.failure(NetworkServiceError.serverResponseError))
+                    return
+                }
+                
+                do {
+                    let eventResponse = try JSONDecoder().decode(EventServerResponse.self, from: data)
+                    completionHandler(.success(eventResponse.events))
+                } catch {
+                    completionHandler(.failure(error))
+                }
+            }
+        }
+        
+        task.resume()
+    }
+    
+    // MARK: - Types
+    
+    private struct EventServerResponse: Decodable {
+        let events: [LiveEvent]
     }
     
     private struct Constants {
@@ -42,5 +68,6 @@ class SeatGeekNetworkService: LiveEventRetrieving {
         static let scheme = "https"
         static let seatGeekHost = "api.seatgeek.com"
         static let eventsEndpoint = "/2/events/"
+        static let OKStatusCode = 200
     }
 }

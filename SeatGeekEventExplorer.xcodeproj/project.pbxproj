@@ -21,6 +21,7 @@
 		8C8433FE25CF82DB000BF116 /* FileManager+getDocumentsDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8433FD25CF82DB000BF116 /* FileManager+getDocumentsDirectory.swift */; };
 		8C84340525CF8D70000BF116 /* DiskStorageServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C84340425CF8D70000BF116 /* DiskStorageServiceTests.swift */; };
 		8C84340C25CF96A0000BF116 /* LiveEventRetrieving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C84340B25CF96A0000BF116 /* LiveEventRetrieving.swift */; };
+		8C84341225CF982F000BF116 /* SeatGeekNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C84341125CF982F000BF116 /* SeatGeekNetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		8C8433FD25CF82DB000BF116 /* FileManager+getDocumentsDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+getDocumentsDirectory.swift"; sourceTree = "<group>"; };
 		8C84340425CF8D70000BF116 /* DiskStorageServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskStorageServiceTests.swift; sourceTree = "<group>"; };
 		8C84340B25CF96A0000BF116 /* LiveEventRetrieving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventRetrieving.swift; sourceTree = "<group>"; };
+		8C84341125CF982F000BF116 /* SeatGeekNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatGeekNetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				8C84340B25CF96A0000BF116 /* LiveEventRetrieving.swift */,
+				8C84341125CF982F000BF116 /* SeatGeekNetworkService.swift */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				8C71B19425CCE333006B1340 /* AppDelegate.swift in Sources */,
 				8C8433F925CF80A2000BF116 /* DiskStorageService.swift in Sources */,
 				8C8433FE25CF82DB000BF116 /* FileManager+getDocumentsDirectory.swift in Sources */,
+				8C84341225CF982F000BF116 /* SeatGeekNetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

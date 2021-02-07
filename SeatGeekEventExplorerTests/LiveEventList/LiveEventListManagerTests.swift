@@ -75,6 +75,34 @@ class LiveEventListManagerTests: XCTestCase {
         XCTAssert(didCallLiveEventsActions)
     }
     
+    func testErrorDelegateCalledOnError() {
+        let referenceError = NetworkServiceError.serverResponseError
+        
+        let mockServer = LiveEventRetrievingMock(completionHandlerData: .failure(referenceError))
+        let mockDelegate = LiveEventListManagerDelegateMock()
+        
+        // system under test
+        let sut = LiveEventListManager(eventProvider: mockServer,
+                                       storageProvider: DiskStorageService.shared)
+        sut.delegate = mockDelegate
+        
+        // implement hooks for delegate
+        mockDelegate.liveEventsDidUpdateAction = { _ in
+            XCTFail("Events did update action shouldn't be called")
+        }
+        
+        var didCallErrorAction = false
+        mockDelegate.errorDidOccurAction = { error in
+            didCallErrorAction = true
+            XCTAssert((error as? NetworkServiceError) == referenceError)
+        }
+        
+        // perform test
+        sut.refreshLiveEvents(with: nil)
+        
+        XCTAssert(didCallErrorAction)
+    }
+    
     // MARK: - Helper methods
     
     private func randomLiveEventFactory() -> LiveEvent {

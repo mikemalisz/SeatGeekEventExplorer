@@ -35,7 +35,7 @@ class LiveEventListManagerTests: XCTestCase {
     }
     
     func testIsEventFavorited() {
-        let event = randomLiveEventFactory()
+        let event = TestUtility.randomLiveEventFactory()
         let mockServer = LiveEventRetrievingMock()
         
         // system under test
@@ -54,7 +54,7 @@ class LiveEventListManagerTests: XCTestCase {
         // create 3 (arbitrary) live events for testing
         var liveEventReference = [LiveEvent]()
         for _ in 0...2 {
-            liveEventReference.append(randomLiveEventFactory())
+            liveEventReference.append(TestUtility.randomLiveEventFactory())
         }
         
         // initialize mock server with the live events to return to the sut
@@ -79,7 +79,7 @@ class LiveEventListManagerTests: XCTestCase {
         // create 3 (arbitrary) live events for testing
         var liveEventReference = [LiveEvent]()
         for _ in 0...2 {
-            liveEventReference.append(randomLiveEventFactory())
+            liveEventReference.append(TestUtility.randomLiveEventFactory())
         }
         
         // initialize mock server with the live events to return to the sut
@@ -137,20 +137,6 @@ class LiveEventListManagerTests: XCTestCase {
         sut.refreshLiveEvents(with: nil)
         
         XCTAssert(didCallErrorAction)
-    }
-    
-    // MARK: - Helper methods
-    
-    private func randomLiveEventFactory() -> LiveEvent {
-        let venue = LiveEventVenue(name: UUID().uuidString,
-                                   city: UUID().uuidString,
-                                   state: UUID().uuidString)
-        
-        return LiveEvent(id: Int.random(in: 0...Int.max),
-                                  title: UUID().uuidString,
-                                  dateScheduled: Date(),
-                                  venue: venue,
-                                  performers: [])
     }
 
 }

@@ -11,31 +11,30 @@ import XCTest
 class DiskStorageServiceTests: XCTestCase {
     
     override func tearDownWithError() throws {
-        DiskStorageService.shared.clearLocalStorage()
-        DiskStorageService.shared.saveLocalStoreToDisk()
+        DiskStorageService.shared.clearStorage()
     }
 
     func testClearStorageWorks() throws {
         let sut = DiskStorageService()
-        sut.store.favoritedKeys.insert(UUID().uuidString)
+        sut.store.favoritedEventIds.insert(Int.random(in: 0...Int.max))
         
-        sut.clearLocalStorage()
+        sut.clearStorage()
         
-        XCTAssert(sut.store.favoritedKeys.isEmpty)
+        XCTAssert(sut.store.favoritedEventIds.isEmpty)
     }
     
     func testStorageIsPersisted() {
-        let testSet = Set([UUID().uuidString, UUID().uuidString])
+        let testSet = Set([Int.random(in: 0...Int.max), Int.random(in: 0...Int.max)])
         
         var sut = DiskStorageService()
-        sut.store.favoritedKeys = testSet
+        sut.store.favoritedEventIds = testSet
         
         // saves value to disk and creates
         // new instance to read back from disk
         sut.saveLocalStoreToDisk()
         sut = DiskStorageService()
         
-        XCTAssert(sut.store.favoritedKeys == testSet)
+        XCTAssert(sut.store.favoritedEventIds == testSet)
     }
 
 }

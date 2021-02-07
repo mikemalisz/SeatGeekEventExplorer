@@ -24,8 +24,17 @@ class DiskStorageService {
     // MARK: - Disk Storage Handlers
     
     /// Clears local and disk storage
-    func clearLocalStorage() {
+    func clearStorage() {
         store = StorageContainer()
+        
+        if FileManager.default.fileExists(atPath: fileURL.path) {
+            do {
+                try FileManager.default.removeItem(at: fileURL)
+            } catch {
+                print(error)
+                assertionFailure()
+            }
+        }
     }
     
     func saveLocalStoreToDisk() {
@@ -56,10 +65,10 @@ class DiskStorageService {
     // MARK: - Types
     
     struct StorageContainer: Codable {
-        var favoritedKeys: Set<String>
+        var favoritedEventIds: Set<Int>
         
-        init(favoritedKeys: Set<String> = .init()) {
-            self.favoritedKeys = favoritedKeys
+        init(favoritedEventIds: Set<Int> = .init()) {
+            self.favoritedEventIds = favoritedEventIds
         }
     }
     

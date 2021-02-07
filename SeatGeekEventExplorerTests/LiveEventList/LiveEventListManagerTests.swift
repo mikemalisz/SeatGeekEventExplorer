@@ -13,6 +13,26 @@ class LiveEventListManagerTests: XCTestCase {
     override func tearDownWithError() throws {
         DiskStorageService.shared.clearStorage()
     }
+    
+    func testServerQueryIsCorrect() {
+        let queryReference = UUID().uuidString
+        
+        var mockServer = LiveEventRetrievingMock()
+        
+        var didCallRetrieveEvents = false
+        mockServer.retrieveEventsAction = { query in
+            didCallRetrieveEvents = true
+            XCTAssert(query == queryReference)
+        }
+        
+        // system under test
+        let sut = LiveEventListManager(eventProvider: mockServer,
+                                       storageProvider: DiskStorageService.shared)
+        
+        sut.refreshLiveEvents(with: queryReference)
+        
+        XCTAssert(didCallRetrieveEvents)
+    }
 
     func testLiveEventsUpdatesCorrectly() {
         // create 3 (arbitrary) live events for testing

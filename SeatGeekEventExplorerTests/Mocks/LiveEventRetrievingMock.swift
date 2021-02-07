@@ -13,9 +13,9 @@ struct LiveEventRetrievingMock: LiveEventRetrieving {
     var retrieveEventsAction: ((_ query: String?) -> Void)?
     
     /// A result object to use when calling completion handler of methods
-    let completionHandlerData: Result<[LiveEvent], Error>
+    var completionHandlerData: Result<[LiveEvent], Error>?
     
-    init(retrieveEventsAction: ((_ query: String?) -> Void)? = nil, completionHandlerData: Result<[LiveEvent], Error>) {
+    init(retrieveEventsAction: ((_ query: String?) -> Void)? = nil, completionHandlerData: Result<[LiveEvent], Error>? = nil) {
         self.retrieveEventsAction = retrieveEventsAction
         self.completionHandlerData = completionHandlerData
     }
@@ -25,6 +25,8 @@ struct LiveEventRetrievingMock: LiveEventRetrieving {
         retrieveEventsAction?(query)
         
         // pass the completion handler data we were given back to the caller
-        completionHandler(completionHandlerData)
+        if let completionHandlerData = completionHandlerData {
+            completionHandler(completionHandlerData)
+        }
     }
 }

@@ -9,25 +9,47 @@ import XCTest
 @testable import SeatGeekEventExplorer
 
 class LiveEventListManagerTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
+    
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        DiskStorageService.shared.clearStorage()
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testLiveEventsUpdatesCorrectly() throws {
+        // create 3 (arbitrary) live events for testing
+        var liveEventReference = [LiveEvent]()
+        for _ in 0...2 {
+            liveEventReference.append(randomLiveEventFactory())
         }
+        
+        // initialize mock server with the live events to return to the sut
+        let mockServer = LiveEventRetrievingMock(completionHandlerData: .success(liveEventReference))
+        
+        let sut = LiveEventListManager(eventProvider: mockServer,
+                                       storageProvider: DiskStorageService.shared)
+        
+        sut.refreshLiveEvents(with: nil)
+        
+        // make sure events in sut match live event reference
+        XCTAssert(sut.events.count == liveEventReference.count)
+        
+        // make sure events in sut are in same order as reference
+        for i in 0..<sut.events.count {
+            XCTAssertTrue(sut.events[i].id == liveEventReference[i].id)
+        }
+    }
+    
+    // MARK: - Helper methods
+    
+    private func randomLiveEventFactory() -> LiveEvent {
+        let venue = LiveEventVenue(name: UUID().uuidString,
+                                   city: UUID().uuidString,
+                                   state: UUID().uuidString)
+        
+        return LiveEvent(id: Int.random(in: 0...Int.max),
+                                  title: UUID().uuidString,
+                                  dateScheduled: Date(),
+                                  venue: venue,
+                                  performers: [])
     }
 
 }

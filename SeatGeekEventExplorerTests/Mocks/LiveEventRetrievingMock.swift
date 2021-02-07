@@ -10,14 +10,19 @@ import Foundation
 
 struct LiveEventRetrievingMock: LiveEventRetrieving {
     /// Hook for intercepting data passed to retrieve events method
-    let retrieveEventsAction: (_ query: String?) -> Void
+    var retrieveEventsAction: ((_ query: String?) -> Void)?
     
     /// A result object to use when calling completion handler of methods
     let completionHandlerData: Result<[LiveEvent], Error>
     
+    init(retrieveEventsAction: ((_ query: String?) -> Void)? = nil, completionHandlerData: Result<[LiveEvent], Error>) {
+        self.retrieveEventsAction = retrieveEventsAction
+        self.completionHandlerData = completionHandlerData
+    }
+    
     func retrieveEvents(with query: String?, completionHandler: @escaping LiveEventServerResponse) {
         // call hook to make sure the parameters provided are correct
-        retrieveEventsAction(query)
+        retrieveEventsAction?(query)
         
         // pass the completion handler data we were given back to the caller
         completionHandler(completionHandlerData)

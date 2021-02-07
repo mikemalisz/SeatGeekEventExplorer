@@ -23,6 +23,7 @@
 		8C84340C25CF96A0000BF116 /* LiveEventRetrieving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C84340B25CF96A0000BF116 /* LiveEventRetrieving.swift */; };
 		8C84341225CF982F000BF116 /* SeatGeekNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C84341125CF982F000BF116 /* SeatGeekNetworkService.swift */; };
 		8C84341625CF9D63000BF116 /* NetworkServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C84341525CF9D63000BF116 /* NetworkServiceError.swift */; };
+		8CD49C2725D06785003D1EA2 /* LiveEventListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD49C2625D06785003D1EA2 /* LiveEventListManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		8C84340B25CF96A0000BF116 /* LiveEventRetrieving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventRetrieving.swift; sourceTree = "<group>"; };
 		8C84341125CF982F000BF116 /* SeatGeekNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatGeekNetworkService.swift; sourceTree = "<group>"; };
 		8C84341525CF9D63000BF116 /* NetworkServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceError.swift; sourceTree = "<group>"; };
+		8CD49C2625D06785003D1EA2 /* LiveEventListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventListManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +99,9 @@
 		8C71B19225CCE333006B1340 /* SeatGeekEventExplorer */ = {
 			isa = PBXGroup;
 			children = (
-				8C84340A25CF966C000BF116 /* NetworkService */,
+				8CD49C2525D06762003D1EA2 /* LiveEventList */,
 				8C71B1E225CCE71D006B1340 /* LiveEventModel */,
+				8C84340A25CF966C000BF116 /* NetworkService */,
 				8C71B19725CCE333006B1340 /* ViewController.swift */,
 				8C71B19925CCE333006B1340 /* Main.storyboard */,
 				8C8433F625CF7953000BF116 /* Utility */,
@@ -172,6 +175,14 @@
 				8C84341525CF9D63000BF116 /* NetworkServiceError.swift */,
 			);
 			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		8CD49C2525D06762003D1EA2 /* LiveEventList */ = {
+			isa = PBXGroup;
+			children = (
+				8CD49C2625D06785003D1EA2 /* LiveEventListManager.swift */,
+			);
+			path = LiveEventList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +295,7 @@
 				8C71B19425CCE333006B1340 /* AppDelegate.swift in Sources */,
 				8C8433F925CF80A2000BF116 /* DiskStorageService.swift in Sources */,
 				8C8433FE25CF82DB000BF116 /* FileManager+getDocumentsDirectory.swift in Sources */,
+				8CD49C2725D06785003D1EA2 /* LiveEventListManager.swift in Sources */,
 				8C84341225CF982F000BF116 /* SeatGeekNetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

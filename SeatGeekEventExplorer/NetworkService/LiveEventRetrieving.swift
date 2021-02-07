@@ -16,6 +16,6 @@ protocol LiveEventRetrieving {
     ///   - query: The query to provide the server for matching events
     ///   - completionHandler: A closure called once the server request has completed
     ///
-    /// completionHandler may be called on a background thread
+    /// completionHandler should always be called on the main thread
     func retrieveEvents(with query: String?, completionHandler: @escaping LiveEventServerResponse)
 }

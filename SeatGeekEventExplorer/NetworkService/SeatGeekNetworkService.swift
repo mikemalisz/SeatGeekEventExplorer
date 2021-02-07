@@ -62,23 +62,26 @@ extension SeatGeekNetworkService: LiveEventRetrieving {
         }
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if let data = data, let response = response as? HTTPURLResponse {
-                // make sure status code from server was OK
-                guard response.statusCode == Constants.OKStatusCode else {
-                    completionHandler(.failure(NetworkServiceError.serverResponseError))
-                    return
-                }
-                
-                // decode data from server and call completion handler
-                do {
-                    let eventResponse = try JSONDecoder().decode(EventServerResponse.self, from: data)
-                    completionHandler(.success(eventResponse.events))
-                } catch {
+            // make sure to call completion handler on main thread
+            DispatchQueue.main.async {
+                if let data = data, let response = response as? HTTPURLResponse {
+                    // make sure status code from server was OK
+                    guard response.statusCode == Constants.OKStatusCode else {
+                        completionHandler(.failure(NetworkServiceError.serverResponseError))
+                        return
+                    }
+                    
+                    // decode data from server and call completion handler
+                    do {
+                        let eventResponse = try JSONDecoder().decode(EventServerResponse.self, from: data)
+                        completionHandler(.success(eventResponse.events))
+                    } catch {
+                        completionHandler(.failure(error))
+                    }
+                } else if let error = error {
+                    // error performing data task
                     completionHandler(.failure(error))
                 }
-            } else if let error = error {
-                // error performing data task
-                completionHandler(.failure(error))
             }
         }
         

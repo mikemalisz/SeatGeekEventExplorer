@@ -38,13 +38,9 @@ class LiveEventListManager {
             
             switch result {
             case .success(let newEvents):
-                DispatchQueue.main.async {
-                    self.events = newEvents
-                }
+                self.events = newEvents
             case .failure(let error):
-                DispatchQueue.main.async {
-                    self.delegate?.liveEventListManager(self, errorDidOccur: error)
-                }
+                self.delegate?.liveEventListManager(self, errorDidOccur: error)
                 
             }
         }

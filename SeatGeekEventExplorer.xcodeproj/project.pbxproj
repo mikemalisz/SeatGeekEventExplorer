@@ -17,6 +17,8 @@
 		8C71B1E425CCE746006B1340 /* LiveEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C71B1E325CCE746006B1340 /* LiveEvent.swift */; };
 		8C71B1E825CCE789006B1340 /* LiveEventPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C71B1E725CCE789006B1340 /* LiveEventPerformer.swift */; };
 		8C71B1EC25CCED73006B1340 /* LiveEventVenue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C71B1EB25CCED73006B1340 /* LiveEventVenue.swift */; };
+		8C8433F925CF80A2000BF116 /* DiskStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8433F825CF80A2000BF116 /* DiskStorageService.swift */; };
+		8C8433FE25CF82DB000BF116 /* FileManager+getDocumentsDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8433FD25CF82DB000BF116 /* FileManager+getDocumentsDirectory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		8C71B1E325CCE746006B1340 /* LiveEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEvent.swift; sourceTree = "<group>"; };
 		8C71B1E725CCE789006B1340 /* LiveEventPerformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventPerformer.swift; sourceTree = "<group>"; };
 		8C71B1EB25CCED73006B1340 /* LiveEventVenue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventVenue.swift; sourceTree = "<group>"; };
+		8C8433F825CF80A2000BF116 /* DiskStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskStorageService.swift; sourceTree = "<group>"; };
+		8C8433FD25CF82DB000BF116 /* FileManager+getDocumentsDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+getDocumentsDirectory.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,8 @@
 				8C71B1E225CCE71D006B1340 /* LiveEventModel */,
 				8C71B19725CCE333006B1340 /* ViewController.swift */,
 				8C71B19925CCE333006B1340 /* Main.storyboard */,
+				8C8433F625CF7953000BF116 /* Utility */,
+				8C8433FC25CF82A2000BF116 /* Extensions */,
 				8C71B1CF25CCE416006B1340 /* SupportingFiles */,
 			);
 			path = SeatGeekEventExplorer;
@@ -122,6 +128,22 @@
 				8C71B1EB25CCED73006B1340 /* LiveEventVenue.swift */,
 			);
 			path = LiveEventModel;
+			sourceTree = "<group>";
+		};
+		8C8433F625CF7953000BF116 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				8C8433F825CF80A2000BF116 /* DiskStorageService.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		8C8433FC25CF82A2000BF116 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8C8433FD25CF82DB000BF116 /* FileManager+getDocumentsDirectory.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +252,8 @@
 				8C71B1DF25CCE569006B1340 /* Environment.swift in Sources */,
 				8C71B1EC25CCED73006B1340 /* LiveEventVenue.swift in Sources */,
 				8C71B19425CCE333006B1340 /* AppDelegate.swift in Sources */,
+				8C8433F925CF80A2000BF116 /* DiskStorageService.swift in Sources */,
+				8C8433FE25CF82DB000BF116 /* FileManager+getDocumentsDirectory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

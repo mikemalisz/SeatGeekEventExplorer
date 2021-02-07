@@ -13,22 +13,35 @@ class DiskStorageService {
     /// Container for stored values this object manages
     var store = StorageContainer()
     
-    // MARK: - Object Lifecycle
+    private var fileURL = FileManager
+        .getDocumentsDirectory()
+        .appendingPathComponent(Constants.storageFilename)
     
-    private init() {
+    init() {
         updateLocalStoreFromDisk()
-    }
-    
-    deinit {
-        saveLocalStoreToDisk()
     }
     
     // MARK: - Disk Storage Handlers
     
+    /// Clears local and disk storage
+    func clearLocalStorage() {
+        store = StorageContainer()
+    }
+    
+    func saveLocalStoreToDisk() {
+        do {
+            let encodedData = try JSONEncoder().encode(store)
+            try encodedData.write(to: fileURL)
+        } catch {
+            print(error)
+            assertionFailure()
+        }
+    }
+    
     private func updateLocalStoreFromDisk() {
-        let fileURL = FileManager
-            .getDocumentsDirectory()
-            .appendingPathComponent(Constants.storageFilename)
+        guard FileManager.default.fileExists(atPath: fileURL.path) else {
+            return
+        }
         
         do {
             let data = try Data(contentsOf: fileURL)
@@ -38,21 +51,6 @@ class DiskStorageService {
             print(error)
             assertionFailure()
         }
-    }
-    
-    private func saveLocalStoreToDisk() {
-        let fileURL = FileManager
-            .getDocumentsDirectory()
-            .appendingPathComponent(Constants.storageFilename)
-        
-        do {
-            let encodedData = try JSONEncoder().encode(store)
-            try encodedData.write(to: fileURL)
-        } catch {
-            print(error)
-            assertionFailure()
-        }
-        
     }
     
     // MARK: - Types

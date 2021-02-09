@@ -50,6 +50,10 @@ class LiveEventListTableViewController: UITableViewController, Storyboarded {
         configureSearchController()
         configureEventListManager()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
 
 }
 

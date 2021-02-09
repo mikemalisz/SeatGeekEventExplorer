@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LiveEventListTableViewCell" id="86s-PK-2hb">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LiveEventListTableViewCell" id="86s-PK-2hb" customClass="LiveEventListTableViewCell" customModule="SeatGeekEventExplorer" customModuleProvider="target">
                                 <rect key="frame" x="20" y="55.5" width="374" height="126.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="86s-PK-2hb" id="xXn-zn-8kb">
@@ -76,6 +76,12 @@
                                         <constraint firstAttribute="trailing" secondItem="SXA-fq-sXD" secondAttribute="trailing" constant="20" symbolic="YES" id="r36-xG-q5t"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="Uyp-7a-zbW" id="0kn-LV-Dob"/>
+                                    <outlet property="locationLabel" destination="QCg-wx-hxO" id="hSS-Ga-2ZJ"/>
+                                    <outlet property="previewImageView" destination="VE6-ra-Wz8" id="2MW-Zt-rth"/>
+                                    <outlet property="titleLabel" destination="t2P-qC-JGR" id="YUx-FR-txN"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

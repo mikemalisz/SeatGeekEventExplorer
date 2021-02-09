@@ -8,16 +8,37 @@
 import UIKit
 
 class LiveEventListTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    // MARK: - Image Preview
+    
+    @IBOutlet private weak var previewImageView: UIImageView!
+    
+    func setPreviewImage(with image: UIImage) {
+        previewImageView.image = image
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    // MARK: - Title
+    
+    @IBOutlet private weak var titleLabel: UILabel!
+    
+    func setTitle(with title: String) {
+        
     }
-
+    
+    // MARK: - Location
+    
+    @IBOutlet private weak var locationLabel: UILabel!
+    
+    func setLocation(with city: String, state: String) {
+        
+    }
+    
+    // MARK: - Date
+    
+    @IBOutlet private weak var dateLabel: UILabel!
+    
+    func setDate(with date: Date) {
+        dateLabel.text = date.description
+    }
+    
 }

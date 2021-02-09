@@ -8,17 +8,17 @@
 import UIKit
 
 class LiveEventListDataSource: NSObject {
-    let listManager: LiveEventListManager
+    let eventListManager: LiveEventListManager
     
-    init(listManager: LiveEventListManager) {
-        self.listManager = listManager
+    init(eventListManager: LiveEventListManager) {
+        self.eventListManager = eventListManager
         super.init()
     }
 }
 
 extension LiveEventListDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listManager.events.count
+        return eventListManager.events.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

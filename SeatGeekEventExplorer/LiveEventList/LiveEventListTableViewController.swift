@@ -9,15 +9,15 @@ import UIKit
 
 class LiveEventListTableViewController: UITableViewController {
 
-    var listManager: LiveEventListManager!
+    var eventListManager: LiveEventListManager!
     
-    private lazy var dataSource = LiveEventListDataSource(listManager: listManager)
+    private lazy var dataSource = LiveEventListDataSource(eventListManager: eventListManager)
     
     // MARK: - Search Controller
     
     private let searchController = UISearchController(searchResultsController: nil)
     
-    private lazy var searchResultsUpdater = LiveEventListSearchResultsUpdater(eventListManager: listManager)
+    private lazy var searchResultsUpdater = LiveEventListSearchResultsUpdater(eventListManager: eventListManager)
     
     private func configureSearchController() {
         searchController.searchResultsUpdater = searchResultsUpdater

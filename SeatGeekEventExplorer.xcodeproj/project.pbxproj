@@ -25,6 +25,7 @@
 		8CBDA58725D22AA6001EFC0B /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBDA58625D22AA6001EFC0B /* MainCoordinator.swift */; };
 		8CBDA58B25D22B4D001EFC0B /* LiveEventListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBDA58A25D22B4D001EFC0B /* LiveEventListTableViewController.swift */; };
 		8CBDA58F25D22B73001EFC0B /* LiveEventListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBDA58E25D22B73001EFC0B /* LiveEventListDataSource.swift */; };
+		8CBDA59425D23193001EFC0B /* LiveEventListSearchResultsUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBDA59325D23193001EFC0B /* LiveEventListSearchResultsUpdater.swift */; };
 		8CD49C2725D06785003D1EA2 /* LiveEventListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD49C2625D06785003D1EA2 /* LiveEventListManager.swift */; };
 		8CD49C2E25D07B2E003D1EA2 /* LiveEventListManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD49C2D25D07B2E003D1EA2 /* LiveEventListManagerTests.swift */; };
 		8CD49C3625D07BAA003D1EA2 /* LiveEventRetrievingMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD49C3525D07BAA003D1EA2 /* LiveEventRetrievingMock.swift */; };
@@ -67,6 +68,7 @@
 		8CBDA58625D22AA6001EFC0B /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		8CBDA58A25D22B4D001EFC0B /* LiveEventListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventListTableViewController.swift; sourceTree = "<group>"; };
 		8CBDA58E25D22B73001EFC0B /* LiveEventListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventListDataSource.swift; sourceTree = "<group>"; };
+		8CBDA59325D23193001EFC0B /* LiveEventListSearchResultsUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventListSearchResultsUpdater.swift; sourceTree = "<group>"; };
 		8CD49C2625D06785003D1EA2 /* LiveEventListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventListManager.swift; sourceTree = "<group>"; };
 		8CD49C2D25D07B2E003D1EA2 /* LiveEventListManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventListManagerTests.swift; sourceTree = "<group>"; };
 		8CD49C3525D07BAA003D1EA2 /* LiveEventRetrievingMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventRetrievingMock.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				8CD49C2625D06785003D1EA2 /* LiveEventListManager.swift */,
 				8CBDA58A25D22B4D001EFC0B /* LiveEventListTableViewController.swift */,
 				8CBDA58E25D22B73001EFC0B /* LiveEventListDataSource.swift */,
+				8CBDA59325D23193001EFC0B /* LiveEventListSearchResultsUpdater.swift */,
 			);
 			path = LiveEventList;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				8CBDA58F25D22B73001EFC0B /* LiveEventListDataSource.swift in Sources */,
 				8CBDA58725D22AA6001EFC0B /* MainCoordinator.swift in Sources */,
 				8C71B1E825CCE789006B1340 /* LiveEventPerformer.swift in Sources */,
+				8CBDA59425D23193001EFC0B /* LiveEventListSearchResultsUpdater.swift in Sources */,
 				8C71B19825CCE333006B1340 /* ViewController.swift in Sources */,
 				8C71B1DF25CCE569006B1340 /* Environment.swift in Sources */,
 				8C71B1EC25CCED73006B1340 /* LiveEventVenue.swift in Sources */,

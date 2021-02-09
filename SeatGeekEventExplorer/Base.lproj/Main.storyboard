@@ -95,7 +95,7 @@
             </objects>
             <point key="canvasLocation" x="327.536231884058" y="269.19642857142856"/>
         </scene>
-        <!--Live Event Details View Controller-->
+        <!--Title-->
         <scene sceneID="58V-od-vsL">
             <objects>
                 <viewController storyboardIdentifier="LiveEventDetailsViewController" id="fts-cg-Eht" customClass="LiveEventDetailsViewController" customModule="SeatGeekEventExplorer" customModuleProvider="target" sceneMemberID="viewController">
@@ -104,16 +104,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="btt-7i-VEi">
-                                <rect key="frame" x="12" y="56" width="390" height="794"/>
+                                <rect key="frame" x="12" y="100" width="390" height="750"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbG-da-BA1">
+                                        <rect key="frame" x="0.0" y="0.0" width="61.5" height="29"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NDw-r5-YHq">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="200"/>
+                                        <rect key="frame" x="0.0" y="53" width="390" height="200"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="njJ-dL-1dT"/>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="6Xa-5P-qEU">
-                                        <rect key="frame" x="0.0" y="224" width="41.5" height="570"/>
+                                        <rect key="frame" x="0.0" y="277" width="41.5" height="473"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7Of-Yh-o4i">
                                                 <rect key="frame" x="0.0" y="0.0" width="41.5" height="49"/>
@@ -146,10 +152,13 @@
                             <constraint firstItem="W5G-eK-LhL" firstAttribute="trailing" secondItem="btt-7i-VEi" secondAttribute="trailing" constant="12" id="n8P-sF-VTZ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" largeTitleDisplayMode="always" id="EYc-lT-O2c"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="dateLabel" destination="TXU-qE-X02" id="KBq-MQ-jOL"/>
                         <outlet property="detailImageView" destination="NDw-r5-YHq" id="qc6-iP-RI1"/>
                         <outlet property="locationLabel" destination="4aG-cu-qs9" id="dJk-8o-Zhg"/>
+                        <outlet property="titleLabel" destination="fbG-da-BA1" id="gXG-SS-oAo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zhj-to-WmO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

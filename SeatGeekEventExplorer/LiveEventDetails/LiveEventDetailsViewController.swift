@@ -19,6 +19,8 @@ class LiveEventDetailsViewController: UIViewController, Storyboarded {
     
     // MARK: - IBOutlets
     
+    @IBOutlet private weak var titleLabel: UILabel!
+    
     @IBOutlet private weak var detailImageView: UIImageView!
     
     @IBOutlet private weak var dateLabel: UILabel!
@@ -26,17 +28,30 @@ class LiveEventDetailsViewController: UIViewController, Storyboarded {
     @IBOutlet private weak var locationLabel: UILabel!
     
     private func configureViewFromEventDetails() {
+        titleLabel.text = event.title
         dateLabel.text = event.dateScheduled.description
         
-        let location = "\(event.venue.city), \(event.venue.state)"
-        locationLabel.text = location
+        locationLabel.text = Constants.formatLocation(with: event.venue.city,
+                                                      state: event.venue.state)
     }
     
     // MARK: - Controller Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = Constants.navigationTitle
         configureViewFromEventDetails()
+    }
+    
+    // MARK: - Types
+    
+    private struct Constants {
+        static let navigationTitle = "Event Details"
+        
+        static func formatLocation(with city: String, state: String) -> String {
+            return "\(city), \(state)"
+        }
     }
 
 }

@@ -42,6 +42,7 @@ class LiveEventDetailsViewController: UIViewController, Storyboarded {
         
         navigationItem.title = Constants.navigationTitle
         configureViewFromEventDetails()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: ToggleableHeartView())
     }
     
     // MARK: - Types

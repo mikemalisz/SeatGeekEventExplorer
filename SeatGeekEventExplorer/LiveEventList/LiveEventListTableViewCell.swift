@@ -9,13 +9,37 @@ import UIKit
 
 class LiveEventListTableViewCell: UITableViewCell {
     
-    // MARK: - Image Preview
+    // MARK: - Images
     
-    @IBOutlet private weak var previewImageView: UIImageView!
+    @IBOutlet private weak var previewImageView: UIImageView! {
+        didSet {
+            previewImageView.layer.cornerRadius = 15
+        }
+    }
     
     func setPreviewImage(with image: UIImage) {
         previewImageView.image = image
     }
+    
+    func setIsHeartIconVisible(_ isVisible: Bool) {
+        favoritedImageView.isHidden = !isVisible
+    }
+    
+    private lazy var favoritedImageView: UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: Constants.heartIconName))
+        imageView.contentMode = .scaleAspectFit
+        imageView.tintColor = .red
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        addSubview(imageView)
+        NSLayoutConstraint.activate([
+            imageView.heightAnchor.constraint(equalToConstant: Constants.heartIconSize),
+            imageView.widthAnchor.constraint(equalToConstant: Constants.heartIconSize),
+            imageView.topAnchor.constraint(equalTo: previewImageView.topAnchor, constant: Constants.heartIconOffset),
+            imageView.leadingAnchor.constraint(equalTo: previewImageView.leadingAnchor, constant: Constants.heartIconOffset)
+        ])
+        return imageView
+    }()
     
     // MARK: - Title
     
@@ -41,4 +65,11 @@ class LiveEventListTableViewCell: UITableViewCell {
         dateLabel.text = date.description
     }
     
+    // MARK: - Types
+    
+    private struct Constants {
+        static let heartIconSize: CGFloat = 25
+        static let heartIconOffset = -1*(heartIconSize / 3)
+        static let heartIconName = "filled-heart-icon"
+    }
 }

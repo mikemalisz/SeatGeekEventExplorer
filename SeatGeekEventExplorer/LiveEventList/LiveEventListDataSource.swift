@@ -47,6 +47,7 @@ extension LiveEventListDataSource: UITableViewDataSource {
         cell.setTitle(with: event.title)
         cell.setLocation(withCity: event.venue.city, state: event.venue.state)
         cell.setDate(with: event.dateScheduled)
+        cell.setIsHeartIconVisible(eventListManager.isFavorited(event: event))
         
         if let performer = event.performers.first {
             imageProvider.retrieveImage(at: performer.imagePath) { [weak cell] (result) in

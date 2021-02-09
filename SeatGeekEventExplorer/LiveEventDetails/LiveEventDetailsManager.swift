@@ -22,5 +22,7 @@ struct LiveEventDetailsManager {
         } else {
             storageProvider.store.favoritedEventIds.insert(event.id)
         }
+        // save changes
+        storageProvider.saveLocalStoreToDisk()
     }
 }

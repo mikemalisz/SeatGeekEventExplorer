@@ -26,6 +26,20 @@ class LiveEventDetailsTest: XCTestCase {
         XCTAssert(DiskStorageService.shared.store.favoritedEventIds.contains(referenceEvent.id))
     }
     
+    func testEventIdFavoritedIsSaved() {
+        let referenceEvent = TestUtility.randomLiveEventFactory()
+        
+        // system under test
+        let sut = LiveEventDetailsManager(event: referenceEvent,
+                                          storageProvider: DiskStorageService.shared)
+        
+        sut.toggleEventFavorited()
+        
+        // make sure sut saved the changes to disk
+        let newStorageService = DiskStorageService()
+        XCTAssert(newStorageService.store.favoritedEventIds.contains(referenceEvent.id))
+    }
+    
     func testEventIdBecomesUnfavorited() {
         let referenceEvent = TestUtility.randomLiveEventFactory()
         DiskStorageService.shared.store.favoritedEventIds.insert(referenceEvent.id)

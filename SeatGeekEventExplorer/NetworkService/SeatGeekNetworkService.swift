@@ -91,7 +91,11 @@ extension SeatGeekNetworkService: LiveEventRetrieving {
         
         task.resume()
     }
-    
+}
+
+// MARK: - Image Retrieving
+
+extension SeatGeekNetworkService: ImageRetrieving {
     func retrieveImage(at path: String, completionHandler: @escaping ImageServerResponse) {
         guard let url = NSURL(string: path) else { return }
         

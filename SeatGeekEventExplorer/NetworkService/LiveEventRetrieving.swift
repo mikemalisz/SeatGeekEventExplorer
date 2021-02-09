@@ -10,8 +10,6 @@ import UIKit
 protocol LiveEventRetrieving {
     typealias LiveEventServerResponse = (Result<[LiveEvent], Error>) -> Void
     
-    typealias ImageServerResponse = (Result<UIImage, Error>) -> Void
-    
     /// Retrieves events with the given query from the server
     ///
     /// - Parameters:
@@ -20,6 +18,4 @@ protocol LiveEventRetrieving {
     ///
     /// completionHandler should always be called on the main thread
     func retrieveEvents(with query: String?, completionHandler: @escaping LiveEventServerResponse)
-    
-    func retrieveImage(at path: String, completionHandler: @escaping ImageServerResponse)
 }

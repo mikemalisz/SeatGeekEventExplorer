@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8C688CA325D320BA0013DA1F /* LiveEventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C688CA225D320BA0013DA1F /* LiveEventDetailsViewController.swift */; };
 		8C688CA825D3295C0013DA1F /* ToggleableHeartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C688CA725D3295C0013DA1F /* ToggleableHeartButton.swift */; };
+		8C688CB925D33F940013DA1F /* ImageRetrieving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C688CB825D33F940013DA1F /* ImageRetrieving.swift */; };
 		8C71B19425CCE333006B1340 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C71B19325CCE333006B1340 /* AppDelegate.swift */; };
 		8C71B19B25CCE333006B1340 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C71B19925CCE333006B1340 /* Main.storyboard */; };
 		8C71B19D25CCE334006B1340 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C71B19C25CCE334006B1340 /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 /* Begin PBXFileReference section */
 		8C688CA225D320BA0013DA1F /* LiveEventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventDetailsViewController.swift; sourceTree = "<group>"; };
 		8C688CA725D3295C0013DA1F /* ToggleableHeartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleableHeartButton.swift; sourceTree = "<group>"; };
+		8C688CB825D33F940013DA1F /* ImageRetrieving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRetrieving.swift; sourceTree = "<group>"; };
 		8C71B19025CCE333006B1340 /* SeatGeekEventExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeatGeekEventExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C71B19325CCE333006B1340 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C71B19A25CCE333006B1340 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				8C84340B25CF96A0000BF116 /* LiveEventRetrieving.swift */,
 				8C84341125CF982F000BF116 /* SeatGeekNetworkService.swift */,
 				8C84341525CF9D63000BF116 /* NetworkServiceError.swift */,
+				8C688CB825D33F940013DA1F /* ImageRetrieving.swift */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C688CB925D33F940013DA1F /* ImageRetrieving.swift in Sources */,
 				8C71B1E425CCE746006B1340 /* LiveEvent.swift in Sources */,
 				8CBDA58F25D22B73001EFC0B /* LiveEventListDataSource.swift in Sources */,
 				8C688CA325D320BA0013DA1F /* LiveEventDetailsViewController.swift in Sources */,

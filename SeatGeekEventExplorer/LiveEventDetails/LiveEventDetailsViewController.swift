@@ -41,7 +41,7 @@ class LiveEventDetailsViewController: UIViewController, Storyboarded {
                 guard case .success(let image) = result else {
                     return
                 }
-                self?.detailImageView.image = image
+                self?.detailImageView.image = image.roundedCorners()
             }
         }
     }

@@ -10,6 +10,7 @@
 		8C688CA325D320BA0013DA1F /* LiveEventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C688CA225D320BA0013DA1F /* LiveEventDetailsViewController.swift */; };
 		8C688CA825D3295C0013DA1F /* ToggleableHeartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C688CA725D3295C0013DA1F /* ToggleableHeartButton.swift */; };
 		8C688CB925D33F940013DA1F /* ImageRetrieving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C688CB825D33F940013DA1F /* ImageRetrieving.swift */; };
+		8C688CBD25D343E00013DA1F /* UIImage+roundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C688CBC25D343E00013DA1F /* UIImage+roundedCorners.swift */; };
 		8C71B19425CCE333006B1340 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C71B19325CCE333006B1340 /* AppDelegate.swift */; };
 		8C71B19B25CCE333006B1340 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C71B19925CCE333006B1340 /* Main.storyboard */; };
 		8C71B19D25CCE334006B1340 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C71B19C25CCE334006B1340 /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		8C688CA225D320BA0013DA1F /* LiveEventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventDetailsViewController.swift; sourceTree = "<group>"; };
 		8C688CA725D3295C0013DA1F /* ToggleableHeartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleableHeartButton.swift; sourceTree = "<group>"; };
 		8C688CB825D33F940013DA1F /* ImageRetrieving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRetrieving.swift; sourceTree = "<group>"; };
+		8C688CBC25D343E00013DA1F /* UIImage+roundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+roundedCorners.swift"; sourceTree = "<group>"; };
 		8C71B19025CCE333006B1340 /* SeatGeekEventExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeatGeekEventExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C71B19325CCE333006B1340 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C71B19A25CCE333006B1340 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			children = (
 				8C8433FD25CF82DB000BF116 /* FileManager+getDocumentsDirectory.swift */,
 				8CBDA5AD25D23B80001EFC0B /* UITableViewCell+cellIdentifier.swift */,
+				8C688CBC25D343E00013DA1F /* UIImage+roundedCorners.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				8CBDA59425D23193001EFC0B /* LiveEventListSearchResultsUpdater.swift in Sources */,
 				8C71B1DF25CCE569006B1340 /* Environment.swift in Sources */,
 				8CBDA5A425D23AF8001EFC0B /* LiveEventListTableViewCell.swift in Sources */,
+				8C688CBD25D343E00013DA1F /* UIImage+roundedCorners.swift in Sources */,
 				8C71B1EC25CCED73006B1340 /* LiveEventVenue.swift in Sources */,
 				8CBDA58B25D22B4D001EFC0B /* LiveEventListTableViewController.swift in Sources */,
 				8C688CA825D3295C0013DA1F /* ToggleableHeartButton.swift in Sources */,

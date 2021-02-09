@@ -50,10 +50,13 @@ extension LiveEventListDataSource: UITableViewDataSource {
         
         if let performer = event.performers.first {
             imageProvider.retrieveImage(at: performer.imagePath) { [weak cell] (result) in
-                guard case .success(let image) = result else {
+                guard
+                    case .success(let image) = result,
+                    let roundedImage = image.roundedCorners()
+                else {
                     return
                 }
-                cell?.setPreviewImage(with: image)
+                cell?.setPreviewImage(with: roundedImage)
             }
         }
         

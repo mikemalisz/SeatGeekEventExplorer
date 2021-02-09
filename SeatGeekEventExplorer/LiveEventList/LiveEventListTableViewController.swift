@@ -18,6 +18,10 @@ class LiveEventListTableViewController: UITableViewController, Storyboarded {
         eventListManager.refreshLiveEvents(with: nil)
     }
     
+    // MARK: - Coordinator
+    
+    var coordinator: MainCoordinator!
+    
     // MARK: - Data Source
     
     private var dataSource: LiveEventListDataSource?

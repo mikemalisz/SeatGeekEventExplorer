@@ -21,6 +21,7 @@ class MainCoordinator {
         
         let controller = LiveEventListTableViewController.instantiate()
         controller.eventListManager = eventListManager
+        controller.coordinator = self
         navigationController.pushViewController(controller, animated: false)
     }
     

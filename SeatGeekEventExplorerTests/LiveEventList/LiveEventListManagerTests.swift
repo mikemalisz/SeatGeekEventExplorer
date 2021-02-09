@@ -49,6 +49,22 @@ class LiveEventListManagerTests: XCTestCase {
         DiskStorageService.shared.store.favoritedEventIds.insert(event.id)
         XCTAssert(sut.isFavorited(event: event))
     }
+    
+    func testIsEventReturnedCorrectly() {
+        let event = TestUtility.randomLiveEventFactory()
+        let mockServer = LiveEventRetrievingMock(completionHandlerData: .success([event]))
+        
+        // system under test
+        let sut = LiveEventListManager(eventProvider: mockServer,
+                                       storageProvider: DiskStorageService.shared)
+        XCTAssertNil(sut.event(for: 0))
+        
+        sut.refreshLiveEvents(with: nil)
+        
+        XCTAssertNotNil(sut.event(for: 0))
+        XCTAssertNil(sut.event(for: 1))
+        XCTAssertNil(sut.event(for: -1))
+    }
 
     func testLiveEventsUpdatesCorrectly() {
         // create 3 (arbitrary) live events for testing

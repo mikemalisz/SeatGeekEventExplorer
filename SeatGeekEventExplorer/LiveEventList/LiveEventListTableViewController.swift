@@ -31,7 +31,18 @@ class LiveEventListTableViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.dataSource = dataSource
-        
+        configureSearchController()
+        eventListManager.refreshLiveEvents(with: nil)
     }
 
+}
+
+extension LiveEventListTableViewController: LiveEventListManagerDelegate {
+    func liveEventListManager(_ listManager: LiveEventListManager, errorDidOccur error: Error) {
+        print(error)
+    }
+    
+    func liveEventListManager(_ listManager: LiveEventListManager, liveEventsDidUpdate events: [LiveEvent]) {
+        tableView.reloadData()
+    }
 }

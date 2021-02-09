@@ -5,7 +5,7 @@
 //  Created by Mike Maliszewski on 2/7/21.
 //
 
-import Foundation
+import UIKit
 
 protocol LiveEventListManagerDelegate: AnyObject {
     func liveEventListManager(_ listManager: LiveEventListManager, errorDidOccur error: Error)
@@ -46,6 +46,10 @@ class LiveEventListManager {
                 
             }
         }
+    }
+    
+    func retrieveImage(at path: String, completionHandler: @escaping (Result<UIImage, Error>) -> Void) {
+        eventProvider.retrieveImage(at: path, completionHandler: completionHandler)
     }
     
     func isFavorited(event: LiveEvent) -> Bool {

@@ -8,5 +8,9 @@
 import Foundation
 
 struct LiveEventPerformer: Decodable {
+    let imagePath: String
     
+    enum CodingKeys: String, CodingKey {
+        case imagePath = "image"
+    }
 }

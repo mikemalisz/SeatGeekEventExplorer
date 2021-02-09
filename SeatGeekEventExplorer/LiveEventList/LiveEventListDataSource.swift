@@ -45,6 +45,15 @@ extension LiveEventListDataSource: UITableViewDataSource {
         cell.setLocation(withCity: event.venue.city, state: event.venue.state)
         cell.setDate(with: event.dateScheduled)
         
+        if let performer = event.performers.first {
+            eventListManager.retrieveImage(at: performer.imagePath) { [weak cell] (result) in
+                guard case .success(let image) = result else {
+                    return
+                }
+                cell?.setPreviewImage(with: image)
+            }
+        }
+        
         return cell
     }
 }

@@ -1,5 +1,5 @@
 //
-//  ToggleableHeartView.swift
+//  ToggleableHeartButton.swift
 //  SeatGeekEventExplorer
 //
 //  Created by Mike Maliszewski on 2/9/21.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-class ToggleableHeartView: UIView {
+class ToggleableHeartButton: UIButton {
     
-    var isHeartToggled = false {
+    var isHeartImageFilled = false {
         didSet {
             configureHeartImage()
         }
@@ -47,7 +47,7 @@ class ToggleableHeartView: UIView {
     }
 
     private func configureHeartImage() {
-        let imageName = isHeartToggled
+        let imageName = isHeartImageFilled
             ? Constants.filledHeartIcon
             : Constants.unfilledHeartIcon
         

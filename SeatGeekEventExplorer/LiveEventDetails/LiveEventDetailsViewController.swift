@@ -35,6 +35,22 @@ class LiveEventDetailsViewController: UIViewController, Storyboarded {
                                                       state: event.venue.state)
     }
     
+    // MARK: - Bar button
+    
+    private let heartButton = ToggleableHeartButton()
+    
+    private func configureRightBarButton() {
+        heartButton.addTarget(self, action: #selector(userDidPressFavoriteButton), for: .touchUpInside)
+        let barButton = UIBarButtonItem(customView: heartButton)
+        navigationItem.rightBarButtonItem = barButton
+    }
+    
+    @objc
+    private func userDidPressFavoriteButton() {
+        eventDetailsManager.toggleEventFavorited()
+        heartButton.isHeartImageFilled = eventDetailsManager.isEventFavorited()
+    }
+    
     // MARK: - Controller Lifecycle
 
     override func viewDidLoad() {
@@ -42,7 +58,7 @@ class LiveEventDetailsViewController: UIViewController, Storyboarded {
         
         navigationItem.title = Constants.navigationTitle
         configureViewFromEventDetails()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: ToggleableHeartView())
+        configureRightBarButton()
     }
     
     // MARK: - Types

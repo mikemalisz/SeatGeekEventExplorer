@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LiveEventDetailsViewController: UIViewController {
+class LiveEventDetailsViewController: UIViewController, Storyboarded {
     
     // MARK: - Event Details
     

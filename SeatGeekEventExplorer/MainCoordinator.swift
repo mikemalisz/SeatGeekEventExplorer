@@ -25,6 +25,11 @@ class MainCoordinator {
     }
     
     func showDetail(for event: LiveEvent) {
+        let eventDetailsManager = LiveEventDetailsManager(event: event,
+                                                          storageProvider: DiskStorageService.shared)
         
+        let controller = LiveEventDetailsViewController.instantiate()
+        controller.eventDetailsManager = eventDetailsManager
+        navigationController.pushViewController(controller, animated: true)
     }
 }

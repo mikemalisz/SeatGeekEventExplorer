@@ -22,7 +22,7 @@ class LiveEventListTableViewCell: UITableViewCell {
     @IBOutlet private weak var titleLabel: UILabel!
     
     func setTitle(with title: String) {
-        
+        titleLabel.text = title
     }
     
     // MARK: - Location
@@ -30,7 +30,7 @@ class LiveEventListTableViewCell: UITableViewCell {
     @IBOutlet private weak var locationLabel: UILabel!
     
     func setLocation(withCity city: String, state: String) {
-        
+        locationLabel.text = "\(city), \(state)"
     }
     
     // MARK: - Date

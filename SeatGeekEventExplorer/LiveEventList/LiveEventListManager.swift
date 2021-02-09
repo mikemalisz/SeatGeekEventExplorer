@@ -24,10 +24,13 @@ class LiveEventListManager {
     
     private let eventProvider: LiveEventRetrieving
     
+    private let imageProvider: ImageRetrieving
+    
     private let storageProvider: DiskStorageService
     
-    init(eventProvider: LiveEventRetrieving, storageProvider: DiskStorageService) {
+    init(eventProvider: LiveEventRetrieving, imageProvider: ImageRetrieving, storageProvider: DiskStorageService) {
         self.eventProvider = eventProvider
+        self.imageProvider = imageProvider
         self.storageProvider = storageProvider
     }
     
@@ -49,7 +52,7 @@ class LiveEventListManager {
     }
     
     func retrieveImage(at path: String, completionHandler: @escaping (Result<UIImage, Error>) -> Void) {
-        eventProvider.retrieveImage(at: path, completionHandler: completionHandler)
+        imageProvider.retrieveImage(at: path, completionHandler: completionHandler)
     }
     
     func isFavorited(event: LiveEvent) -> Bool {

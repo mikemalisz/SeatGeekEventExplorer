@@ -8,6 +8,8 @@
 import UIKit
 
 class MainCoordinator {
+    private let networkProvider = SeatGeekNetworkService()
+    
     let navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
@@ -15,8 +17,8 @@ class MainCoordinator {
     }
     
     func start() {
-        let eventProvider = SeatGeekNetworkService()
-        let eventListManager = LiveEventListManager(eventProvider: eventProvider,
+        let eventListManager = LiveEventListManager(eventProvider: networkProvider,
+                                                    imageProvider: networkProvider,
                                                     storageProvider: DiskStorageService.shared)
         
         let controller = LiveEventListTableViewController.instantiate()

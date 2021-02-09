@@ -31,7 +31,7 @@ class LiveEventListTableViewController: UITableViewController, Storyboarded {
     private func configureSearchController() {
         searchController.searchResultsUpdater = searchResultsUpdater
         navigationItem.searchController = searchController
-        definesPresentationContext = true
+        searchController.obscuresBackgroundDuringPresentation = false
     }
     
     // MARK: - Controller Lifecycle

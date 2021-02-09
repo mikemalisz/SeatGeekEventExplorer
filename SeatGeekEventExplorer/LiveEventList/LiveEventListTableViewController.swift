@@ -34,8 +34,10 @@ class LiveEventListTableViewController: UITableViewController, Storyboarded {
     
     private func configureSearchController() {
         searchController.searchResultsUpdater = searchResultsUpdater
-        navigationItem.searchController = searchController
         searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = Constants.searchBarPlaceholder
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
     }
     
     // MARK: - Controller Lifecycle
@@ -43,6 +45,7 @@ class LiveEventListTableViewController: UITableViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = Constants.navigationTitle
         dataSource = LiveEventListDataSource(tableView: tableView,
                                              eventListManager: eventListManager,
                                              imageProvider: imageProvider)
@@ -52,9 +55,16 @@ class LiveEventListTableViewController: UITableViewController, Storyboarded {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         tableView.reloadData()
     }
 
+    // MARK: - Types
+    
+    private struct Constants {
+        static let navigationTitle = "Events"
+        static let searchBarPlaceholder = "Search Events"
+    }
 }
 
 // MARK: - List Manager Delegate

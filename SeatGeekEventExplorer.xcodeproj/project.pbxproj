@@ -22,6 +22,7 @@
 		8C84340C25CF96A0000BF116 /* LiveEventRetrieving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C84340B25CF96A0000BF116 /* LiveEventRetrieving.swift */; };
 		8C84341225CF982F000BF116 /* SeatGeekNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C84341125CF982F000BF116 /* SeatGeekNetworkService.swift */; };
 		8C84341625CF9D63000BF116 /* NetworkServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C84341525CF9D63000BF116 /* NetworkServiceError.swift */; };
+		8CBDA58725D22AA6001EFC0B /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBDA58625D22AA6001EFC0B /* MainCoordinator.swift */; };
 		8CD49C2725D06785003D1EA2 /* LiveEventListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD49C2625D06785003D1EA2 /* LiveEventListManager.swift */; };
 		8CD49C2E25D07B2E003D1EA2 /* LiveEventListManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD49C2D25D07B2E003D1EA2 /* LiveEventListManagerTests.swift */; };
 		8CD49C3625D07BAA003D1EA2 /* LiveEventRetrievingMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD49C3525D07BAA003D1EA2 /* LiveEventRetrievingMock.swift */; };
@@ -61,6 +62,7 @@
 		8C84340B25CF96A0000BF116 /* LiveEventRetrieving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventRetrieving.swift; sourceTree = "<group>"; };
 		8C84341125CF982F000BF116 /* SeatGeekNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatGeekNetworkService.swift; sourceTree = "<group>"; };
 		8C84341525CF9D63000BF116 /* NetworkServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceError.swift; sourceTree = "<group>"; };
+		8CBDA58625D22AA6001EFC0B /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		8CD49C2625D06785003D1EA2 /* LiveEventListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventListManager.swift; sourceTree = "<group>"; };
 		8CD49C2D25D07B2E003D1EA2 /* LiveEventListManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventListManagerTests.swift; sourceTree = "<group>"; };
 		8CD49C3525D07BAA003D1EA2 /* LiveEventRetrievingMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventRetrievingMock.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				8CD49C3F25D08C0A003D1EA2 /* LiveEventDetails */,
 				8C71B1E225CCE71D006B1340 /* LiveEventModel */,
 				8C84340A25CF966C000BF116 /* NetworkService */,
+				8CBDA58625D22AA6001EFC0B /* MainCoordinator.swift */,
 				8C71B19725CCE333006B1340 /* ViewController.swift */,
 				8C71B19925CCE333006B1340 /* Main.storyboard */,
 				8C8433F625CF7953000BF116 /* Utility */,
@@ -333,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C71B1E425CCE746006B1340 /* LiveEvent.swift in Sources */,
+				8CBDA58725D22AA6001EFC0B /* MainCoordinator.swift in Sources */,
 				8C71B1E825CCE789006B1340 /* LiveEventPerformer.swift in Sources */,
 				8C71B19825CCE333006B1340 /* ViewController.swift in Sources */,
 				8C71B1DF25CCE569006B1340 /* Environment.swift in Sources */,

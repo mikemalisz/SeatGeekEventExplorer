@@ -40,6 +40,7 @@ class LiveEventDetailsViewController: UIViewController, Storyboarded {
     private let heartButton = ToggleableHeartButton()
     
     private func configureRightBarButton() {
+        heartButton.isHeartImageFilled = eventDetailsManager.isEventFavorited()
         heartButton.addTarget(self, action: #selector(userDidPressFavoriteButton), for: .touchUpInside)
         let barButton = UIBarButtonItem(customView: heartButton)
         navigationItem.rightBarButtonItem = barButton

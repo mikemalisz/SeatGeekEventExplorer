@@ -19,7 +19,7 @@ class MainCoordinator {
         let eventListManager = LiveEventListManager(eventProvider: eventProvider,
                                                     storageProvider: DiskStorageService.shared)
         
-        let controller = LiveEventListTableViewController()
+        let controller = LiveEventListTableViewController.instantiate()
         controller.eventListManager = eventListManager
         navigationController.pushViewController(controller, animated: false)
     }

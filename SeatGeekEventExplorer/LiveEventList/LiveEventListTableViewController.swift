@@ -9,9 +9,18 @@ import UIKit
 
 class LiveEventListTableViewController: UITableViewController, Storyboarded {
 
+    // MARK: - Live Event List Manager
+    
     var eventListManager: LiveEventListManager!
     
-    private lazy var dataSource = LiveEventListDataSource(eventListManager: eventListManager)
+    private func configureEventListManager() {
+        eventListManager.delegate = self
+        eventListManager.refreshLiveEvents(with: nil)
+    }
+    
+    // MARK: - Data Source
+    
+    private var dataSource: LiveEventListDataSource?
     
     // MARK: - Search Controller
     
@@ -30,9 +39,10 @@ class LiveEventListTableViewController: UITableViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.dataSource = dataSource
+        dataSource = LiveEventListDataSource(tableView: tableView, eventListManager: eventListManager)
+        
         configureSearchController()
-        eventListManager.refreshLiveEvents(with: nil)
+        configureEventListManager()
     }
 
 }

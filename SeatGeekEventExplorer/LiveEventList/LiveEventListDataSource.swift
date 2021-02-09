@@ -8,11 +8,16 @@
 import UIKit
 
 class LiveEventListDataSource: NSObject {
-    let eventListManager: LiveEventListManager
+    private let eventListManager: LiveEventListManager
     
-    init(eventListManager: LiveEventListManager) {
+    private let tableView: UITableView
+    
+    init(tableView: UITableView, eventListManager: LiveEventListManager) {
         self.eventListManager = eventListManager
+        self.tableView = tableView
         super.init()
+        
+        tableView.dataSource = self
     }
 }
 
@@ -23,15 +28,11 @@ extension LiveEventListDataSource: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: LiveEventListTableViewCell.cellIdentifier,
+                withIdentifier: LiveEventListTableViewCell.cellIdentifier,
             for: indexPath) as? LiveEventListTableViewCell
         else {
             assertionFailure("Expecting LiveEventListTableViewCell")
             return UITableViewCell()
-        }
-        
-        guard eventListManager.events.count < indexPath.row else {
-            return cell
         }
         
         guard let event = eventListManager.event(for: indexPath.row) else {

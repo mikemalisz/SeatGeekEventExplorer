@@ -29,9 +29,16 @@ class LiveEventDetailsViewController: UIViewController, Storyboarded {
     
     @IBOutlet private weak var locationLabel: UILabel!
     
+    private let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        return formatter
+    }()
+    
     private func configureViewFromEventDetails() {
         titleLabel.text = event.title
-        dateLabel.text = event.dateScheduled.description
+        dateLabel.text = dateFormatter.string(from: event.dateScheduled)
         
         locationLabel.text = Constants.formatLocation(with: event.venue.city,
                                                       state: event.venue.state)

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LiveEventListTableViewController: UITableViewController {
+class LiveEventListTableViewController: UITableViewController, Storyboarded {
 
     var eventListManager: LiveEventListManager!
     

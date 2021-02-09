@@ -31,6 +31,8 @@ class LiveEventListManager {
         self.storageProvider = storageProvider
     }
     
+    // MARK: - Intents
+    
     func refreshLiveEvents(with query: String?) {
         eventProvider.retrieveEvents(with: query) { [weak self] (result) in
             // capture weak self to prevent retain cycles

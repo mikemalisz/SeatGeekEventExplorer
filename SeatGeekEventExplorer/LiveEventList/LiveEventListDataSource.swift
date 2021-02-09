@@ -21,6 +21,8 @@ class LiveEventListDataSource: NSObject {
     }
 }
 
+// MARK: - Table View Data Source
+
 extension LiveEventListDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return eventListManager.events.count

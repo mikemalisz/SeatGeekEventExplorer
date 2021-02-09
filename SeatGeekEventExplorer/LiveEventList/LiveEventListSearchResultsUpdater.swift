@@ -18,6 +18,7 @@ class LiveEventListSearchResultsUpdater: NSObject {
 
 extension LiveEventListSearchResultsUpdater: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        // TODO: Implement
+        guard let query = searchController.searchBar.text else { return }
+        eventListManager.refreshLiveEvents(with: query)
     }
 }

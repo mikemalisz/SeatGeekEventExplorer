@@ -49,4 +49,11 @@ class LiveEventListManager {
     func isFavorited(event: LiveEvent) -> Bool {
         return storageProvider.store.favoritedEventIds.contains(event.id)
     }
+    
+    func event(for index: Int) -> LiveEvent? {
+        guard (index >= 0) && (index < events.count) else {
+            return nil
+        }
+        return events[index]
+    }
 }

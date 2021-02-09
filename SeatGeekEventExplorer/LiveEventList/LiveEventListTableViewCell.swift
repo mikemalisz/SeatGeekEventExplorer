@@ -29,7 +29,7 @@ class LiveEventListTableViewCell: UITableViewCell {
     
     @IBOutlet private weak var locationLabel: UILabel!
     
-    func setLocation(with city: String, state: String) {
+    func setLocation(withCity city: String, state: String) {
         
     }
     

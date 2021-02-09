@@ -18,12 +18,12 @@ class MainCoordinator {
     
     func start() {
         let eventListManager = LiveEventListManager(eventProvider: networkProvider,
-                                                    imageProvider: networkProvider,
                                                     storageProvider: DiskStorageService.shared)
         
         let controller = LiveEventListTableViewController.instantiate()
         controller.eventListManager = eventListManager
         controller.coordinator = self
+        controller.imageProvider = networkProvider
         navigationController.pushViewController(controller, animated: false)
         
     }

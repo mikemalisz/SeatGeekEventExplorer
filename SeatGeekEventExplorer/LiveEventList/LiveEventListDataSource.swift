@@ -8,13 +8,16 @@
 import UIKit
 
 class LiveEventListDataSource: NSObject {
-    private let eventListManager: LiveEventListManager
-    
     private let tableView: UITableView
     
-    init(tableView: UITableView, eventListManager: LiveEventListManager) {
-        self.eventListManager = eventListManager
+    private let eventListManager: LiveEventListManager
+    
+    private let imageProvider: ImageRetrieving
+    
+    init(tableView: UITableView, eventListManager: LiveEventListManager, imageProvider: ImageRetrieving) {
         self.tableView = tableView
+        self.eventListManager = eventListManager
+        self.imageProvider = imageProvider
         super.init()
         
         tableView.dataSource = self
@@ -46,7 +49,7 @@ extension LiveEventListDataSource: UITableViewDataSource {
         cell.setDate(with: event.dateScheduled)
         
         if let performer = event.performers.first {
-            eventListManager.retrieveImage(at: performer.imagePath) { [weak cell] (result) in
+            imageProvider.retrieveImage(at: performer.imagePath) { [weak cell] (result) in
                 guard case .success(let image) = result else {
                     return
                 }

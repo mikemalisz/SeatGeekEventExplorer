@@ -9,7 +9,7 @@ import UIKit
 
 class LiveEventListTableViewController: UITableViewController, Storyboarded {
 
-    // MARK: - Live Event List Manager
+    // MARK: - Dependencies
     
     var eventListManager: LiveEventListManager!
     
@@ -18,9 +18,9 @@ class LiveEventListTableViewController: UITableViewController, Storyboarded {
         eventListManager.refreshLiveEvents(with: nil)
     }
     
-    // MARK: - Coordinator
-    
     var coordinator: MainCoordinator!
+    
+    var imageProvider: ImageRetrieving!
     
     // MARK: - Data Source
     
@@ -43,7 +43,9 @@ class LiveEventListTableViewController: UITableViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dataSource = LiveEventListDataSource(tableView: tableView, eventListManager: eventListManager)
+        dataSource = LiveEventListDataSource(tableView: tableView,
+                                             eventListManager: eventListManager,
+                                             imageProvider: imageProvider)
         
         configureSearchController()
         configureEventListManager()

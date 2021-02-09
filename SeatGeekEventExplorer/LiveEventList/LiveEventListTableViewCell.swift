@@ -9,11 +9,23 @@ import UIKit
 
 class LiveEventListTableViewCell: UITableViewCell {
     
+    // MARK: - Helper Properties
+    
+    /// Static property allows the date formatter to be cached throughout
+    /// the lifecycle of the app, meaning we don't need to reallocate memory
+    /// for it each time it's used within the class
+    private static let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .short
+        return formatter
+    }()
+    
     // MARK: - Images
     
     @IBOutlet private weak var previewImageView: UIImageView! {
         didSet {
-            previewImageView.layer.cornerRadius = 15
+            previewImageView.layer.cornerRadius = Constants.previewImageCornerRadius
         }
     }
     
@@ -62,7 +74,7 @@ class LiveEventListTableViewCell: UITableViewCell {
     @IBOutlet private weak var dateLabel: UILabel!
     
     func setDate(with date: Date) {
-        dateLabel.text = date.description
+        dateLabel.text = LiveEventListTableViewCell.dateFormatter.string(from: date)
     }
     
     // MARK: - Types
@@ -71,5 +83,6 @@ class LiveEventListTableViewCell: UITableViewCell {
         static let heartIconSize: CGFloat = 25
         static let heartIconOffset = -1*(heartIconSize / 3)
         static let heartIconName = "filled-heart-icon"
+        static let previewImageCornerRadius: CGFloat = 15
     }
 }

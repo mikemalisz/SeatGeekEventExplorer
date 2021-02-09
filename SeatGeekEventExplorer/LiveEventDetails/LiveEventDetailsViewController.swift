@@ -9,13 +9,15 @@ import UIKit
 
 class LiveEventDetailsViewController: UIViewController, Storyboarded {
     
-    // MARK: - Event Details
+    // MARK: - Dependencies
     
     var eventDetailsManager: LiveEventDetailsManager!
     
     private var event: LiveEvent {
         eventDetailsManager.event
     }
+    
+    var imageProvider: ImageRetrieving!
     
     // MARK: - IBOutlets
     
@@ -33,6 +35,15 @@ class LiveEventDetailsViewController: UIViewController, Storyboarded {
         
         locationLabel.text = Constants.formatLocation(with: event.venue.city,
                                                       state: event.venue.state)
+        
+        if let performer = event.performers.first {
+            imageProvider.retrieveImage(at: performer.imagePath) { [weak self] (result) in
+                guard case .success(let image) = result else {
+                    return
+                }
+                self?.detailImageView.image = image
+            }
+        }
     }
     
     // MARK: - Bar button

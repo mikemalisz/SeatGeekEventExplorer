@@ -34,6 +34,7 @@ class MainCoordinator {
         
         let controller = LiveEventDetailsViewController.instantiate()
         controller.eventDetailsManager = eventDetailsManager
+        controller.imageProvider = networkProvider
         navigationController.pushViewController(controller, animated: true)
     }
 }

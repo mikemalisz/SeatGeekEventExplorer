@@ -51,6 +51,8 @@ class LiveEventListTableViewController: UITableViewController, Storyboarded {
 
 }
 
+// MARK: - List Manager Delegate
+
 extension LiveEventListTableViewController: LiveEventListManagerDelegate {
     func liveEventListManager(_ listManager: LiveEventListManager, errorDidOccur error: Error) {
         print(error)
@@ -58,5 +60,16 @@ extension LiveEventListTableViewController: LiveEventListManagerDelegate {
     
     func liveEventListManager(_ listManager: LiveEventListManager, liveEventsDidUpdate events: [LiveEvent]) {
         tableView.reloadData()
+    }
+}
+
+// MARK: - Table View Delegate
+
+extension LiveEventListTableViewController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let event = eventListManager.event(for: indexPath.row) else {
+            return
+        }
+        coordinator.showDetail(for: event)
     }
 }

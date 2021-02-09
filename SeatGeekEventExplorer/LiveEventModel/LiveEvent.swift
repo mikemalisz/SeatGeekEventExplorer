@@ -9,10 +9,6 @@ import Foundation
 
 struct LiveEvent: Decodable {
     
-    // MARK: User Driven
-    
-    var isFavorited = false
-    
     // MARK: API Driven
     
     let id: Int

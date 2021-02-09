@@ -10,6 +10,7 @@ import Foundation
 enum NetworkServiceError: Error {
     case unknownError
     case serverResponseError
+    case imageConversionFailure
 }
 
 extension NetworkServiceError: LocalizedError {
@@ -19,6 +20,8 @@ extension NetworkServiceError: LocalizedError {
             return NSLocalizedString("An unknown error has occurred", comment: String())
         case .serverResponseError:
             return NSLocalizedString("Received an error from server", comment: String())
+        case .imageConversionFailure:
+            return NSLocalizedString("Failed to convert image", comment: String())
         }
     }
 }

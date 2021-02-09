@@ -8,7 +8,7 @@
 import UIKit
 
 extension UITableViewCell {
-    var cellIdentifier: String {
+    static var cellIdentifier: String {
         // retrieve name of class
         let fullName = NSStringFromClass(Self.self)
         return fullName.components(separatedBy: ".")[1]

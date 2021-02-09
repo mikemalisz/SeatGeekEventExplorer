@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8C688CA325D320BA0013DA1F /* LiveEventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C688CA225D320BA0013DA1F /* LiveEventDetailsViewController.swift */; };
+		8C688CA825D3295C0013DA1F /* ToggleableHeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C688CA725D3295C0013DA1F /* ToggleableHeartView.swift */; };
 		8C71B19425CCE333006B1340 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C71B19325CCE333006B1340 /* AppDelegate.swift */; };
 		8C71B19B25CCE333006B1340 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C71B19925CCE333006B1340 /* Main.storyboard */; };
 		8C71B19D25CCE334006B1340 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C71B19C25CCE334006B1340 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		8C688CA225D320BA0013DA1F /* LiveEventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventDetailsViewController.swift; sourceTree = "<group>"; };
+		8C688CA725D3295C0013DA1F /* ToggleableHeartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleableHeartView.swift; sourceTree = "<group>"; };
 		8C71B19025CCE333006B1340 /* SeatGeekEventExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeatGeekEventExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C71B19325CCE333006B1340 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C71B19A25CCE333006B1340 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -102,6 +104,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C688CA625D3290D0013DA1F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8C688CA725D3295C0013DA1F /* ToggleableHeartView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		8C71B18725CCE333006B1340 = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +133,7 @@
 		8C71B19225CCE333006B1340 /* SeatGeekEventExplorer */ = {
 			isa = PBXGroup;
 			children = (
+				8C688CA625D3290D0013DA1F /* Components */,
 				8CD49C2525D06762003D1EA2 /* LiveEventList */,
 				8CD49C3F25D08C0A003D1EA2 /* LiveEventDetails */,
 				8C71B1E225CCE71D006B1340 /* LiveEventModel */,
@@ -363,6 +374,7 @@
 				8CBDA5A425D23AF8001EFC0B /* LiveEventListTableViewCell.swift in Sources */,
 				8C71B1EC25CCED73006B1340 /* LiveEventVenue.swift in Sources */,
 				8CBDA58B25D22B4D001EFC0B /* LiveEventListTableViewController.swift in Sources */,
+				8C688CA825D3295C0013DA1F /* ToggleableHeartView.swift in Sources */,
 				8CBDA59E25D23463001EFC0B /* Storyboarded.swift in Sources */,
 				8C84340C25CF96A0000BF116 /* LiveEventRetrieving.swift in Sources */,
 				8CD49C4125D08C20003D1EA2 /* LiveEventDetailsManager.swift in Sources */,

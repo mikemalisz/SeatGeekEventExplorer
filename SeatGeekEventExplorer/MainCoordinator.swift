@@ -24,8 +24,6 @@ class MainCoordinator {
         controller.coordinator = self
         navigationController.pushViewController(controller, animated: false)
         
-        // use large titles for subsequent view controllers
-        navigationController.navigationBar.prefersLargeTitles = true
     }
     
     func showDetail(for event: LiveEvent) {

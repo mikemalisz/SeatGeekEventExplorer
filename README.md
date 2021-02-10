@@ -80,3 +80,4 @@ Stores the event for the details view controller, as well as provides functional
 
 1. Add loading indicators when network requests are active. I think it can be confusing to users when a network request might be taking longer than expected but they have no feedback on the UI to indicate that's the case.
 2. Implement an image cache for images received from the network. To be more considerate of the user's data as well as be faster, I think a robust image cache would be a good feature.
+3. Look into CoreData for on-device persistence if the data to persist was going to increase in complexity. The current system works well for simple data types, but using a well documented system like CoreData would be better for future expansion.

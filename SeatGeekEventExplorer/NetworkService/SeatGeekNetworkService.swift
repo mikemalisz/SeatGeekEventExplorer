@@ -9,10 +9,6 @@ import UIKit
 
 class SeatGeekNetworkService {
     
-    // MARK: - Image Cache
-    
-    private var cachedImages = NSCache<NSURL, UIImage>()
-    
     // MARK: - Helper methods
     
     private func createURLComponent(for endpoint: String, with query: String?) -> URLComponents {
@@ -97,37 +93,29 @@ extension SeatGeekNetworkService: LiveEventRetrieving {
 
 extension SeatGeekNetworkService: ImageRetrieving {
     func retrieveImage(at path: String, completionHandler: @escaping ImageServerResponse) {
-        guard let url = NSURL(string: path) else { return }
+        guard let url = URL(string: path) else { return }
         
-        if let cachedImage = cachedImages.object(forKey: url) {
-            // cached image exists, return it
-            completionHandler(.success(cachedImage))
-            return
-        } else {
-            // perform data task to retrieve image
-            let task = URLSession.shared.dataTask(with: url as URL) { [weak self] (data, response, error) in
-                DispatchQueue.main.async {
-                    if let data = data, let response = response as? HTTPURLResponse {
-                        // make sure status code from server was OK
-                        guard response.statusCode == Constants.OKStatusCode else {
-                            completionHandler(.failure(NetworkServiceError.serverResponseError))
-                            return
-                        }
-                        
-                        // decode image from server and call completion handler
-                        guard let image = UIImage(data: data) else {
-                            completionHandler(.failure(NetworkServiceError.imageConversionFailure))
-                            return
-                        }
-                        self?.cachedImages.setObject(image, forKey: url)
-                        completionHandler(.success(image))
-                    } else if let error = error {
-                        // error performing data task
-                        completionHandler(.failure(error))
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            DispatchQueue.main.async {
+                if let data = data, let response = response as? HTTPURLResponse {
+                    // make sure status code from server was OK
+                    guard response.statusCode == Constants.OKStatusCode else {
+                        completionHandler(.failure(NetworkServiceError.serverResponseError))
+                        return
                     }
+                    
+                    // decode image from server and call completion handler
+                    guard let image = UIImage(data: data) else {
+                        completionHandler(.failure(NetworkServiceError.imageConversionFailure))
+                        return
+                    }
+                    completionHandler(.success(image))
+                } else if let error = error {
+                    // error performing data task
+                    completionHandler(.failure(error))
                 }
             }
-            task.resume()
         }
+        task.resume()
     }
 }

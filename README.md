@@ -8,9 +8,9 @@ This app uses the SeatGeek API to display various live events to the user. It fe
 
 1. [Building the Project](#building-project)
 2. [Architecture](#architecture)
-3. [Things I'd do Differently](<(#things-differently)>)
+3. [Things I'd do Differently](#things-differently)
 
-## Building the Project <a name="building-project"></a>
+## <a name="building-project"></a> Building the Project
 
 This app doesn't depend on any third party libraries and should build normally on its own. To make the network requests to the SeatGeek API, credentials must be provided to the scheme that the app is running on to gain access to the SeatGeek API. Once the credentials are added to the scheme, the app should run like normal.
 
@@ -26,7 +26,7 @@ Here's how you can put your credentials into the scheme:
 <img src="DocumentationResources/scheme-settings.png">
 5. The project should now work normally!
 
-## Architecture <a name="architecture"></a>
+## <a name="architecture"></a> Architecture
 
 The main architecture of the app follows the MVC design pattern, along with the Coordinator pattern for navigation.
 
@@ -37,15 +37,15 @@ The main architecture of the app follows the MVC design pattern, along with the 
 3. [Event List Screen](#event-list-screen)
 4. [Event Detail Screen](#event-detail-screen)
 
-#### Network Layer <a name="network-layer"></a>
+#### <a name="network-layer"></a> Network Layer
 
 This app has a heavy focus on networking for consuming event data from the SeatGeek API, as well as images associated with those events. I created protocols such as `LiveEventRetrieving` and `ImageRetrieving` to help decouple the networking code from the models used in the screens, which made it easy to unit test using mocks. `SeatGeekNetworkService` implements both of these retrieving protocols, and is used in the application code for performing all network requests.
 
-#### On-Device Persistence <a name="on-device-persistence"></a>
+#### <a name="on-device-persistence"></a> On-Device Persistence
 
 One of the goals of this app was to enable users to favorite events and have them persist between application launches. I implemented `DiskStorageService`, which has a local `store` property that keeps track of event IDs that have been favorited, and has a method `saveLocalStoreToDisk()` which bundles up the store values and saves it on the user's device. When this class is initialized, it loads any saved data from user's device into itself.
 
-#### Event List Screen <a name="event-list-screen"></a>
+#### <a name="event-list-screen"></a> Event List Screen
 
 <img src="DocumentationResources/event-list-screen.png" height=700>
 
@@ -61,7 +61,7 @@ This class is feeds data to the list data source. It is unit tested, through the
 
 The live search feature is possible by `UISearchController` and the `refreshLiveEvents(with:)` method of `LiveEventListManager`. By utilizing the `searchResultsUpdater` property of `UISearchController`, we can get updates each time the user types a new letter. On each update, I perform a network request using the `refreshLiveEvents(with:)` method which shows the effect of results being filtered in real time when searching.
 
-#### Event Detail Screen <a name="event-detail-screen"></a>
+#### <a name="event-detail-screen"></a> Event Detail Screen
 
 <img src="DocumentationResources/event-details-screen.png" height=700>
 
@@ -73,7 +73,7 @@ This screen is relatively simple, so it contains all of its controller logic in 
 
 Stores the event for the details view controller, as well as provides functionality to favorite and unfavorite the current event using `DiskStorageService`.
 
-## Things I'd do Differently <a name="things-differently"></a>
+## <a name="things-differently"></a> Things I'd do Differently
 
 1. Add loading indicators when network requests are active. I think it can be confusing to users when a network request might be taking longer than expected but they have no feedback on the UI to indicate that's the case.
 2. Implement an image cache for images received from the network. To be more considerate of the user's data as well as be faster, I think a robust image cache would be a good feature.

@@ -16,14 +16,17 @@ This app doesn't depend on any third party libraries and should build normally o
 
 Here's how you can put your credentials into the scheme:
 
-1. Get a `client_id` and `client_secret` by signing up for a SeatGeek developer account
+1. Get a `client_id` and `client_secret` by signing up for a SeatGeek developer account. More info here: [platform.seatgeek.com](https://platform.seatgeek.com)
 2. Open the Xcode project and navigate to Edit Scheme
-   <img src="DocumentationResources/edit-scheme.png">
+
+<img src="DocumentationResources/edit-scheme.png">
+   
 3. Navigate to the Run -> Arguments tab
 4. Enter the SeatGeek client secret into an environment variable named `SEATGEEK_CLIENT_SECRET`
 5. Enter the SeatGeek client id into an environment variable named `SEATGEEK_CLIENT_ID`
 
 <img src="DocumentationResources/scheme-settings.png">
+
 5. The project should now work normally!
 
 ## <a name="architecture"></a> Architecture

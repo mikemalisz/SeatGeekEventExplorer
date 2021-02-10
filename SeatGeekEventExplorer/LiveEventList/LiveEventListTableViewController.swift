@@ -64,6 +64,8 @@ class LiveEventListTableViewController: UITableViewController, Storyboarded {
     private struct Constants {
         static let navigationTitle = "Events"
         static let searchBarPlaceholder = "Search Events"
+        static let errorTitle = "Error"
+        static let OKButtonTitle = "OK"
     }
 }
 
@@ -71,7 +73,9 @@ class LiveEventListTableViewController: UITableViewController, Storyboarded {
 
 extension LiveEventListTableViewController: LiveEventListManagerDelegate {
     func liveEventListManager(_ listManager: LiveEventListManager, errorDidOccur error: Error) {
-        print(error)
+        let error = UIAlertController(title: Constants.errorTitle, message: error.localizedDescription, preferredStyle: .alert)
+        error.addAction(UIAlertAction(title: Constants.OKButtonTitle, style: .default, handler: nil))
+        present(error, animated: true)
     }
     
     func liveEventListManager(_ listManager: LiveEventListManager, liveEventsDidUpdate events: [LiveEvent]) {

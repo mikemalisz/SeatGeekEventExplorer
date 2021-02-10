@@ -31,7 +31,6 @@ extension LiveEvent {
         let formatter = DateFormatter()
         // date time format supplied from API
         formatter.dateFormat = "yyyy-MM-DD'T'HH:mm:ss"
-        formatter.timeZone = TimeZone(secondsFromGMT: 0)
         return formatter
     }()
     

@@ -58,7 +58,7 @@ To help mitigate the "Massive-View-Controller" problem, I compartmentalized diff
 
 ##### LiveEventListManager
 
-This class is feeds data to the list data source. It is unit tested, through the use of mocked classes for the networking components. This class also uses the delegate pattern to communicate updates about its local property of events.
+This class feeds data to the data source. It is unit tested, by using mocked classes in place of the networking components. This class also uses the delegate pattern to communicate updates about its local property of events.
 
 ###### Live Search
 
